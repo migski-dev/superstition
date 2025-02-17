@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://c68q6do3jgx3y"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/npc_spawner/npc_spawner.gd" id="1_m6lvc"]
+[ext_resource type="PackedScene" uid="uid://dbcoh3bpx386k" path="res://scenes/game_objects/npc/npc.tscn" id="2_cxvss"]
+[ext_resource type="PackedScene" uid="uid://e3twjnjoemba" path="res://scenes/game_objects/black_cat_npc/black_cat_npc.tscn" id="2_gxvkh"]
+
+[node name="NpcSpawner" type="Node3D"]
+script = ExtResource("1_m6lvc")
+npc_type_array = Array[PackedScene]([ExtResource("2_gxvkh"), ExtResource("2_cxvss")])

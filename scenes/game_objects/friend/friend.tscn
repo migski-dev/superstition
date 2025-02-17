@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://xmy011wfnfu3"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/friend/friend.gd" id="1_qnb2d"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4u0rl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_juq5q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dylnp"]
+albedo_color = Color(1, 0.454902, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qqqt8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf4f4"]
+albedo_color = Color(0.14902, 0.356863, 1, 1)
+
+[node name="Friend" type="CharacterBody3D"]
+collision_layer = 3
+script = ExtResource("1_qnb2d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_4u0rl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_juq5q")
+surface_material_override/0 = SubResource("StandardMaterial3D_dylnp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.62268e-08, 0.6, 2.62268e-08, 0, -2.62268e-08, 0.6, 0.6, 2.62268e-08, 1.14641e-15, 0.184594, 0.993652, -0.0444307)
+mesh = SubResource("CapsuleMesh_qqqt8")
+surface_material_override/0 = SubResource("StandardMaterial3D_yf4f4")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

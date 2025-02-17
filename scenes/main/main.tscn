@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgi0rqnvkfmw7"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g8jrh"]
+[ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
+[ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="2_tms6t"]
+[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/friend/friend.tscn" id="3_sumrg"]
+[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over.tscn" id="4_wwjyp"]
+
+[sub_resource type="Environment" id="Environment_n2x6o"]
+reflected_light_source = 1
+volumetric_fog_enabled = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_g8jrh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.798846, 0.601536, 0, -0.601536, 0.798846, 0, 3, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n2x6o")
+
+[node name="Level" parent="." instance=ExtResource("1_ouqqb")]
+
+[node name="Player" parent="." node_paths=PackedStringArray("friend") instance=ExtResource("2_tms6t")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
+friend = NodePath("../Friend")
+
+[node name="Friend" parent="." instance=ExtResource("3_sumrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Camera3D" type="Camera3D" parent="Friend"]
+transform = Transform3D(0.258819, 0.683013, -0.683013, -2.05937e-08, 0.707107, 0.707107, 0.965926, -0.183013, 0.183013, -5, 3, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_wwjyp")]

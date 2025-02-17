@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://e3twjnjoemba"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/black_cat_npc/black_cat_npc.gd" id="1_pvm6l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ojrjl"]
+radius = 0.75
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jvwg1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg4wn"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="BlackCatNpc" type="CharacterBody3D"]
+script = ExtResource("1_pvm6l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ojrjl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_jvwg1")
+surface_material_override/0 = SubResource("StandardMaterial3D_bg4wn")
