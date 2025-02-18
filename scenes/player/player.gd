@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @export var friend: CharacterBody3D
 @export var knockback_strength: float = 6.0  # Adjust the knockback force
@@ -9,6 +10,10 @@ var knockback_timer: float = 0.0
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @onready var pole_raycast: RayCast3D = $RayCast3D
+
+func _ready() -> void:
+	GameEvents.connect("on_crack_step",_on_crack_gameover);
+	GameEvents.connect("on_ladder_step",_on_ladder_gameover);
 
 func _physics_process(delta):
 	position.x -= GameEvents.game_speed * delta # Match the speed of the moving modules
@@ -43,7 +48,7 @@ func check_collisions():
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-
+		
 		if collider:
 			if is_instance_of(collider, BlackCat):
 				GameEvents.game_over_reason = "YOU CROSSED PATH WITH A BLACK CAT"
@@ -69,10 +74,17 @@ func detect_pole_split() -> void:
 			GameEvents.game_over_reason = "YOU SPLIT THE POLE"
 			GameEvents.on_game_over.emit()
 	
-	
-
-
 func _on_visible_on_screen_notifier_3d_screen_exited():
 	GameEvents.game_over_reason = "YOU LOST YOUR FRIEND!"
 	GameEvents.on_game_over.emit()
+	
+func _on_crack_gameover():
+	GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
+	GameEvents.on_game_over.emit()
+	print('HIT CRACKS - GAME OVER')
+
+func _on_ladder_gameover():
+	#GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
+	#GameEvents.on_game_over.emit()
+	print('PASSED UNDER A LADDER - LUCK LOSS')
 	

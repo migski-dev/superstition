@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameEvents="*res://scenes/singletons/game_events.tscn"
 
+[dotnet]
+
+project/assembly_name="superstition_gamejam"
+
 [global_group]
 
 player=""
