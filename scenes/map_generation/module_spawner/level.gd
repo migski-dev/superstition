@@ -13,8 +13,6 @@ func _ready() -> void:
 	for n in amount:
 		spawn_module(n*offset)
 
-
-
 func spawn_module(n: int) -> void:
 	if init_obs > 3:
 		rng.randomize()

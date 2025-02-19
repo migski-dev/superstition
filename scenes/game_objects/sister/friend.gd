@@ -4,6 +4,10 @@ class_name Friend
 const SPEED = 4
 const JUMP_VELOCITY = 4.5
 @onready var raycast_target: Marker3D = $Marker3D
+@onready var anim_player = $SUPERSTITION_SISTER/AnimationPlayer
+
+func _ready() -> void:
+	anim_player.play("RUN",-1,1.0)
 
 func _physics_process(delta):
 	position.x -= GameEvents.game_speed * delta

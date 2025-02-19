@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dh0d5jy6vlfuw"]
+
+[ext_resource type="Texture2D" uid="uid://3r7x15fthppc" path="res://scenes/game_objects/ladder/Ladder_House_Props_Diffuse.png" id="1_o5n08"]
+
+[resource]
+resource_name = "Material"
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1_o5n08")
+metallic = 0.4
+roughness = 0.272166

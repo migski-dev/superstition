@@ -1,136 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw75t287s5qit"]
+[gd_scene load_steps=4 format=3 uid="uid://cw75t287s5qit"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/ladder/ladder.gd" id="1_sxqog"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_d7256"]
-size = Vector3(0.05, 1, 0.05)
-
-[sub_resource type="BoxMesh" id="BoxMesh_n8wog"]
-size = Vector3(0.2, 0.45, 0.05)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uquoi"]
-size = Vector3(0.126831, 1.00879, 0.476013)
+[ext_resource type="PackedScene" uid="uid://dipu5xkfngslx" path="res://scenes/game_objects/ladder/Ladder.glb" id="2_3rgun"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o4205"]
-size = Vector3(0.290184, 1, 0.464447)
+size = Vector3(0.290184, 1.51123, 0.464447)
 
 [node name="Ladder" type="Area3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.000232995, 0.00139765, 5.33909e-05)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.000232995, 6.38698, 5.33909e-05)
+collision_layer = 8
 script = ExtResource("1_sxqog")
 
-[node name="Ladder Geometry" type="Node3D" parent="."]
-
-[node name="Right Side" type="RigidBody3D" parent="Ladder Geometry"]
-
-[node name="LeftArmMesh" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0, -0.220079)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("../../..")
-
-[node name="LeftArmMesh2" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0.22)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh3" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, 0.00294226, 0, -0.00521679)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh4" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, -0.0440705, -0.171038, -0.0111109)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh5" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, -0.0790557, -0.34324, 0.00765764)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh6" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, -0.13097, -0.465879, 0.0105429)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh7" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, 0.0693283, 0.24511, 0.0105429)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh8" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, 0.0406714, 0.126156, 0.00779939)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="LeftArmMesh9" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.444932, 0.00776637, -4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, -0.00776637, 0.444932, 1.88738e-08, 0.102614, 0.37238, 0.00851471)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh2" type="MeshInstance3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.189726, 0.361933, 0.00688204)
-mesh = SubResource("BoxMesh_n8wog")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder Geometry/Right Side"]
-transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0.373903, 0.00734012, -0.000663079)
-shape = SubResource("BoxShape3D_uquoi")
-
-[node name="Left Side" type="RigidBody3D" parent="Ladder Geometry"]
-
-[node name="RightArmMesh" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.965926, -0.258819, -8.74228e-08, -0.258819, 0.965926, 0, 8.44439e-08, 2.26267e-08, -1, 0.380347, 0, 0.220079)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("../..")
-
-[node name="RightArmMesh2" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.965926, -0.258819, -8.74228e-08, -0.258819, 0.965926, 0, 8.44439e-08, 2.26267e-08, -1, 0.380347, 0, -0.22)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh3" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.377405, 0, 0.00521679)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh4" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.424417, -0.171038, 0.0111109)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh5" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.459403, -0.34324, -0.00765765)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh6" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.511317, -0.465879, -0.0105429)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh7" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.311019, 0.24511, -0.0105429)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh8" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.339676, 0.126156, -0.00779939)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="RightArmMesh9" type="MeshInstance3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(-0.444932, -0.00776635, 4.70576e-09, -5.03444e-09, 1.87888e-08, -0.445, 0.00776635, -0.444932, -1.88738e-08, 0.277733, 0.37238, -0.0085147)
-mesh = SubResource("BoxMesh_d7256")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder Geometry/Left Side"]
-transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, -0.011471, 0.00530254, 0.0140311)
-shape = SubResource("BoxShape3D_uquoi")
-
-[node name="Top Step" type="Node3D" parent="Ladder Geometry"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198643, 0, -0.00660705)
+[node name="PlayerTrigger" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0357147, -0.372999, -0.00660705)
 shape = SubResource("BoxShape3D_o4205")
+
+[node name="Root Scene" parent="." instance=ExtResource("2_3rgun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14096, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://luf3d88f3gab"]
+
+[ext_resource type="Texture2D" uid="uid://d6qfg7vtmr20" path="res://assets/npc/SUPERSTITION_NPC_Salary_Man.png" id="1_jd7wh"]
+
+[resource]
+resource_name = "material"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_jd7wh")

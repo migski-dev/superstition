@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwxku0fyiip24"]
+[gd_scene load_steps=5 format=3 uid="uid://cwxku0fyiip24"]
 
 [ext_resource type="PackedScene" uid="uid://c68q6do3jgx3y" path="res://scenes/game_objects/npc_spawner/npc_spawner.tscn" id="1_67w03"]
-[ext_resource type="PackedScene" uid="uid://dbcoh3bpx386k" path="res://scenes/game_objects/npc/npc.tscn" id="1_ap8og"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="3_whsha"]
-[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/friend/friend.tscn" id="4_8bl17"]
+[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/friend.tscn" id="4_8bl17"]
 
 [sub_resource type="Environment" id="Environment_seyvu"]
 
@@ -19,7 +18,6 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 
 [node name="NpcSpawner" parent="." instance=ExtResource("1_67w03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.74599)
-npc_scene = ExtResource("1_ap8og")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_seyvu")
