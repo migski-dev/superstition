@@ -1,12 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtm6o5vipje6e"]
+[gd_scene load_steps=9 format=3 uid="uid://dtm6o5vipje6e"]
 
 [ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_055df"]
 [ext_resource type="PackedScene" uid="uid://c68q6do3jgx3y" path="res://scenes/game_objects/npc_spawner/npc_spawner.tscn" id="2_m5n37"]
 [ext_resource type="PackedScene" uid="uid://cw75t287s5qit" path="res://scenes/game_objects/ladder/ladder.tscn" id="3_27uc1"]
 [ext_resource type="PackedScene" uid="uid://b0aaxvqwir740" path="res://scenes/game_objects/cracks/cracks.tscn" id="4_wqfu5"]
 
+[sub_resource type="Gradient" id="Gradient_1amlr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oh3vt"]
+noise_type = 2
+seed = 20220
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dyfqv"]
+color_ramp = SubResource("Gradient_1amlr")
+noise = SubResource("FastNoiseLite_oh3vt")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dmsd"]
 albedo_color = Color(0.0784314, 0.0784314, 1, 1)
+albedo_texture = SubResource("NoiseTexture2D_dyfqv")
 
 [node name="L&C_Module" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -29,49 +41,43 @@ size = Vector3(30, 1, 6)
 material = SubResource("StandardMaterial3D_1dmsd")
 
 [node name="NpcSpawner" parent="." instance=ExtResource("2_m5n37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9996, 0.989213, -1.4929)
 
 [node name="Cracks2" parent="." instance=ExtResource("4_wqfu5")]
-transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -3.31919, 0.798, 1.55947)
+transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -3.32973, 0.798, 2)
 
 [node name="Cracks3" parent="." instance=ExtResource("4_wqfu5")]
-transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -7.42697, 0.798, 1.55947)
+transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -7.42697, 0.798, 2)
 
 [node name="Cracks5" parent="." instance=ExtResource("4_wqfu5")]
-transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, 2.45798, 0.798, 1.55947)
+transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, 2.45798, 0.798, 2)
 
 [node name="Cracks6" parent="." instance=ExtResource("4_wqfu5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09134, 0.792, -1.78838e-07)
 
 [node name="Ladder2" parent="." instance=ExtResource("3_27uc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63232, 0.999, 8.66904e-09)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63058, 1.62779, 0.00186921)
 
 [node name="Ladder3" parent="." instance=ExtResource("3_27uc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.42245, 0.999, 1.69212)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.42071, 1.62779, 2)
 
 [node name="Ladder7" parent="." instance=ExtResource("3_27uc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93642, 0.999, -1.44817)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93816, 1.62779, -2)
 
 [node name="Ladder4" parent="." instance=ExtResource("3_27uc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34586, 0.999, 1.70993e-07)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34412, 1.62779, 0.00186937)
 
 [node name="Ladder5" parent="." instance=ExtResource("3_27uc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75241, 0.999, -3.14128e-07)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.754, 1.628, 0)
 
 [node name="Cracks7" parent="." instance=ExtResource("4_wqfu5")]
-transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -1.09709e-07, 0.798, -1.5)
+transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -1.51397, 0.798, -2)
 
 [node name="Cracks8" parent="." instance=ExtResource("4_wqfu5")]
-transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -7.42697, 0.798, -1.5)
+transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -7.42697, 0.798, -2)
 
 [node name="Cracks9" parent="." instance=ExtResource("4_wqfu5")]
-transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, 7.34438, 0.798, -1.5)
+transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, 7.34438, 0.798, -2)
 
 [node name="Ladder6" parent="." instance=ExtResource("3_27uc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.999, -1.5)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.502, 1.628, -2)

@@ -10,10 +10,12 @@ var knockback_timer: float = 0.0
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @onready var pole_raycast: RayCast3D = $RayCast3D
+@onready var anim_player = $SUPERSTITION_PLAYER_FIX/AnimationPlayer
 
 func _ready() -> void:
 	GameEvents.connect("on_crack_step",_on_crack_gameover);
 	GameEvents.connect("on_ladder_step",_on_ladder_gameover);
+	anim_player.play("Run", -1, 1.5)
 
 func _physics_process(delta):
 	position.x -= GameEvents.game_speed * delta # Match the speed of the moving modules
@@ -84,7 +86,7 @@ func _on_crack_gameover():
 	print('HIT CRACKS - GAME OVER')
 
 func _on_ladder_gameover():
-	#GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
-	#GameEvents.on_game_over.emit()
+	GameEvents.game_over_reason = "YOU LOST A LOT OF LUCK AND DIED"
+	GameEvents.on_game_over.emit()
 	print('PASSED UNDER A LADDER - LUCK LOSS')
 	

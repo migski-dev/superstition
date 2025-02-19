@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c45ajylnm0nup"]
+
+[ext_resource type="Texture2D" uid="uid://c6am2xagyggw1" path="res://Assets/sister/SUPERSTITION_SISTER_LoveChan-BodyTexture.png" id="1_0oj6u"]
+
+[resource]
+resource_name = "Body"
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_0oj6u")

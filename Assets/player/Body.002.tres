@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bf0rajsos1l3r"]
+
+[ext_resource type="Texture2D" uid="uid://hpcgiogsplt" path="res://Assets/player/SUPERSTITION_PLAYER_FIX_LoveChan-BodyTexture.png" id="1_yyv0o"]
+
+[resource]
+resource_name = "Body.002"
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_yyv0o")
