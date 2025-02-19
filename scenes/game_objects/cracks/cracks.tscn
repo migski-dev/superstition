@@ -7,6 +7,7 @@
 size = Vector3(1.29343, 0.0552979, 0.151413)
 
 [node name="Cracks" type="Area3D"]
+collision_mask = 9
 script = ExtResource("1_g36u5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

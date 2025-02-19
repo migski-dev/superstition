@@ -6,7 +6,7 @@ extends Node3D
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
 var min_time: int = 1
 var max_time: int = 2
-var spawn_interval = 1.0
+var spawn_interval = 2.0
 
 
 

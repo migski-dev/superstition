@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw75t287s5qit"]
+[gd_scene load_steps=7 format=3 uid="uid://cw75t287s5qit"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/ladder/ladder.gd" id="1_sxqog"]
 
@@ -13,6 +13,9 @@ size = Vector3(0.126831, 1.00879, 0.476013)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o4205"]
 size = Vector3(0.290184, 1, 0.464447)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wl6tq"]
+radius = 0.66
 
 [node name="Ladder" type="Area3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.000232995, 0.00139765, 5.33909e-05)
@@ -132,5 +135,12 @@ shape = SubResource("BoxShape3D_uquoi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198643, 0, -0.00660705)
 shape = SubResource("BoxShape3D_o4205")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_mask = 9
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198643, 0, -0.00660705)
+shape = SubResource("CapsuleShape3D_wl6tq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

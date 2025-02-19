@@ -11,6 +11,7 @@ albedo_color = Color(0.098442, 0.578959, 2.31028e-06, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_mask = 9
 script = ExtResource("1_t8afa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

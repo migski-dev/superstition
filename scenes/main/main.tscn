@@ -30,7 +30,8 @@ friend = NodePath("../Friend")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="Camera3D" type="Camera3D" parent="Friend"]
-transform = Transform3D(0.258819, 0.683013, -0.683013, -2.05937e-08, 0.707107, 0.707107, 0.965926, -0.183013, 0.183013, -5, 3, 2)
+transform = Transform3D(0.0871558, 0.640342, -0.763129, 0, 0.766044, 0.642788, 0.996195, -0.0560227, 0.0667652, -5.72247, 3.08379, 1.29671)
+fov = 70.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
