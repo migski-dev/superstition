@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hpcgiogsplt"
-path.s3tc="res://.godot/imported/SUPERSTITION_PLAYER_FIX_LoveChan-BodyTexture.png-d928c9d762a57e6c77bb9fe1cb9c0381.s3tc.ctex"
+uid="uid://d6qfg7vtmr20"
+path.s3tc="res://.godot/imported/SUPERSTITION_NPC_Salary_Man.png-f1f35cea3a169f67da846bcd3b6d2330.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3a74ee56c77bdaee8f8ef8055acec587"
+"md5": "7b3f7b67ffebea2431d46a94f4c2a3d7"
 }
 
 [deps]
 
-source_file="res://assets/player/SUPERSTITION_PLAYER_FIX_LoveChan-BodyTexture.png"
-dest_files=["res://.godot/imported/SUPERSTITION_PLAYER_FIX_LoveChan-BodyTexture.png-d928c9d762a57e6c77bb9fe1cb9c0381.s3tc.ctex"]
+source_file="res://assets/npc/SUPERSTITION_NPC_Salary_Man.png"
+dest_files=["res://.godot/imported/SUPERSTITION_NPC_Salary_Man.png-f1f35cea3a169f67da846bcd3b6d2330.s3tc.ctex"]
 
 [params]
 

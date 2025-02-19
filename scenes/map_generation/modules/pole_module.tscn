@@ -49,9 +49,9 @@ collision_layer = 2
 size = Vector3(0.271973, 4.07031, 0.331543)
 
 [node name="NpcSpawner" parent="." instance=ExtResource("2_h74sf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -2)
 right_side = false
 
 [node name="NpcSpawner2" parent="." instance=ExtResource("2_h74sf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, 2)
 right_side = false

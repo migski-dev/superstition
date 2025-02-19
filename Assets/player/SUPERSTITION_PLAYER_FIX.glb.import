@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://caelkrvhalpq"
-path="res://.godot/imported/SUPERSTITION_PLAYER_FIX.glb-933e344ac034b2d81c1b8be4c829785e.scn"
+path="res://.godot/imported/SUPERSTITION_PLAYER_FIX.glb-3cb2cb10d55876c528ceb8cd9d13225f.scn"
 
 [deps]
 
-source_file="res://Assets/player/SUPERSTITION_PLAYER_FIX.glb"
-dest_files=["res://.godot/imported/SUPERSTITION_PLAYER_FIX.glb-933e344ac034b2d81c1b8be4c829785e.scn"]
+source_file="res://assets/player/SUPERSTITION_PLAYER_FIX.glb"
+dest_files=["res://.godot/imported/SUPERSTITION_PLAYER_FIX.glb-3cb2cb10d55876c528ceb8cd9d13225f.scn"]
 
 [params]
 
@@ -3635,7 +3635,7 @@ _subresources={
 "materials": {
 "Body.002": {
 "use_external/enabled": true,
-"use_external/path": "res://Assets/Body.002.tres"
+"use_external/path": "res://assets/player/Body.002.tres"
 }
 },
 "nodes": {

@@ -41,7 +41,7 @@ size = Vector3(30, 1, 6)
 material = SubResource("StandardMaterial3D_1dmsd")
 
 [node name="NpcSpawner" parent="." instance=ExtResource("2_m5n37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9996, 0.989213, -1.4929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.5, -1.493)
 
 [node name="Cracks2" parent="." instance=ExtResource("4_wqfu5")]
 transform = Transform3D(0.998078, 0, -0.000487753, 0, 0.998078, 0, 0.000487753, 0, 0.998078, -3.32973, 0.798, 2)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bh7ydhty4cthe"
-path="res://.godot/imported/SUPERSTITION_SISTER.glb-106a101a32f29910ff302fa708e7e6d0.scn"
+uid="uid://qj6cc5glnido"
+path="res://.godot/imported/SUPERSTITION_NPC.glb-22dc369aceb79c203a043f39f9bbbc5e.scn"
 
 [deps]
 
-source_file="res://assets/sister/SUPERSTITION_SISTER.glb"
-dest_files=["res://.godot/imported/SUPERSTITION_SISTER.glb-106a101a32f29910ff302fa708e7e6d0.scn"]
+source_file="res://assets/npc/SUPERSTITION_NPC.glb"
+dest_files=["res://.godot/imported/SUPERSTITION_NPC.glb-22dc369aceb79c203a043f39f9bbbc5e.scn"]
 
 [params]
 
@@ -33,7 +33,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "animations": {
-"RUN": {
+"Walking": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
@@ -1834,9 +1834,9 @@ _subresources={
 }
 },
 "materials": {
-"Body": {
+"material": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/sister/Body.tres"
+"use_external/path": "res://assets/npc/material.tres"
 }
 }
 }

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://4s8bva87i75l"]
 
-[ext_resource type="PackedScene" uid="uid://caelkrvhalpq" path="res://Assets/player/SUPERSTITION_PLAYER_FIX.glb" id="1_5wbo4"]
+[ext_resource type="PackedScene" uid="uid://caelkrvhalpq" path="res://assets/player/SUPERSTITION_PLAYER_FIX.glb" id="1_5wbo4"]
 
 [node name="SUPERSTITION_PLAYER_FIX" instance=ExtResource("1_5wbo4")]
 

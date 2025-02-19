@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bh7ydhty4cthe"
-path="res://.godot/imported/SUPERSTITION_SISTER.glb-106a101a32f29910ff302fa708e7e6d0.scn"
+uid="uid://4lfl7t710bec"
+path="res://.godot/imported/scene.gltf-9a07d04cb1a858c2895fad458fcd6ab7.scn"
 
 [deps]
 
-source_file="res://assets/sister/SUPERSTITION_SISTER.glb"
-dest_files=["res://.godot/imported/SUPERSTITION_SISTER.glb-106a101a32f29910ff302fa708e7e6d0.scn"]
+source_file="res://assets/cat/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-9a07d04cb1a858c2895fad458fcd6ab7.scn"]
 
 [params]
 
@@ -33,7 +33,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "animations": {
-"RUN": {
+"Armature|ArmatureAction": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
@@ -1831,12 +1831,6 @@ _subresources={
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
 "slices/amount": 0
-}
-},
-"materials": {
-"Body": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/sister/Body.tres"
 }
 }
 }

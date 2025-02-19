@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dv8x6p2p2hfaw"]
 
-[ext_resource type="PackedScene" uid="uid://bh7ydhty4cthe" path="res://Assets/sister/SUPERSTITION_SISTER.glb" id="1_m4moq"]
+[ext_resource type="PackedScene" uid="uid://bh7ydhty4cthe" path="res://assets/sister/SUPERSTITION_SISTER.glb" id="1_m4moq"]
 
 [node name="SUPERSTITION_SISTER" instance=ExtResource("1_m4moq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

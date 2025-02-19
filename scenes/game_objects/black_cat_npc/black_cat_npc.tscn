@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://e3twjnjoemba"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/black_cat_npc/black_cat_npc.gd" id="1_pvm6l"]
+[ext_resource type="PackedScene" uid="uid://5leomaa5iuia" path="res://scenes/game_objects/black_cat_npc/cat.tscn" id="2_upiky"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ojrjl"]
-radius = 0.75
+radius = 0.2
+height = 1.0
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jvwg1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg4wn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxaxk"]
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="BlackCatNpc" type="CharacterBody3D"]
@@ -16,10 +16,42 @@ collision_mask = 9
 script = ExtResource("1_pvm6l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.278571, 0)
 shape = SubResource("CapsuleShape3D_ojrjl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_jvwg1")
-surface_material_override/0 = SubResource("StandardMaterial3D_bg4wn")
+[node name="Cat" parent="." instance=ExtResource("2_upiky")]
+transform = Transform3D(-0.02, 0, 1.74846e-09, 0, 0.02, 0, -1.74846e-09, 0, -0.02, 0, 0, 0)
+
+[node name="Armature" parent="Cat/Sketchfab_model/cat_rigged_fbx/Object_2/RootNode" index="1"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Cat/Sketchfab_model/cat_rigged_fbx/Object_2/RootNode/Armature/Object_6" index="0"]
+bones/1/rotation = Quaternion(0.420332, 0.568614, -0.568614, 0.420331)
+bones/2/rotation = Quaternion(0.0456751, -0.70563, 0.0456751, 0.70563)
+bones/3/rotation = Quaternion(0.146684, -2.2962e-07, -2.16831e-08, 0.989183)
+bones/4/rotation = Quaternion(-0.0270909, 1.31337e-07, 2.95316e-08, 0.999633)
+bones/5/rotation = Quaternion(0.0842478, 5.42846e-08, -1.14813e-07, 0.996445)
+bones/10/rotation = Quaternion(-0.430771, -0.00353228, 0.0485599, 0.901147)
+bones/11/rotation = Quaternion(0.196057, 0.0147, -0.0421529, 0.979576)
+bones/12/rotation = Quaternion(0.053928, -0.000365347, -0.00409, 0.998536)
+bones/13/rotation = Quaternion(0.265558, -6.56555e-08, 2.60658e-08, 0.964095)
+bones/15/rotation = Quaternion(-0.463988, -0.0428877, -0.0298423, 0.884299)
+bones/16/rotation = Quaternion(0.160132, 0.0307131, 0.0459579, 0.985547)
+bones/17/rotation = Quaternion(0.0211491, -0.000231016, -0.00409978, 0.999768)
+bones/18/rotation = Quaternion(0.224459, -6.5186e-08, 2.83828e-08, 0.974483)
+bones/20/rotation = Quaternion(0.442207, -0.531061, 0.612793, 0.38329)
+bones/21/rotation = Quaternion(0.160555, 0.659018, -0.253452, 0.689695)
+bones/22/rotation = Quaternion(0.0245217, 0.896989, -0.441263, 0.00980891)
+bones/23/rotation = Quaternion(-0.0672621, 0.0016476, -0.0247408, 0.997427)
+bones/26/rotation = Quaternion(-0.0319053, 0.000177821, 0.0176409, 0.999335)
+bones/27/rotation = Quaternion(-0.0192554, 0.00215301, -0.00125707, 0.999812)
+bones/28/rotation = Quaternion(-0.142634, -0.00198704, 0.0028762, 0.989769)
+bones/30/rotation = Quaternion(-0.398356, 0.60052, -0.513373, -0.465979)
+bones/31/rotation = Quaternion(0.21804, 0.698376, -0.110775, 0.672651)
+bones/32/rotation = Quaternion(-4.99986e-08, 0.917328, -0.398133, -1.23459e-07)
+bones/33/rotation = Quaternion(-0.0332373, -1.36153e-08, 5.1276e-08, 0.999448)
+
+[node name="Object_9" parent="Cat/Sketchfab_model/cat_rigged_fbx/Object_2/RootNode/Armature/Object_6/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mxaxk")
+
+[editable path="Cat"]
