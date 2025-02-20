@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgi0rqnvkfmw7"]
+[gd_scene load_steps=14 format=3 uid="uid://bgi0rqnvkfmw7"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g8jrh"]
 [ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
 [ext_resource type="Environment" uid="uid://r7xuvkjqy4ye" path="res://assets/environment/environment.tres" id="2_6q7iv"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="2_tms6t"]
 [ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/friend.tscn" id="3_sumrg"]
-[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over.tscn" id="4_wwjyp"]
+[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over_menu/game_over.tscn" id="4_wwjyp"]
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
+[ext_resource type="PackedScene" uid="uid://drq4bukm47wl6" path="res://scenes/ui/on_death_screens/on_death_screen.tscn" id="8_dfwmo"]
 [ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="8_pwo77"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_143ye"]
@@ -43,7 +44,6 @@ script = ExtResource("1_g8jrh")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.798846, 0.601536, 0, -0.601536, 0.798846, 0, 3, 0)
 shadow_enabled = true
-shadow_opacity = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_6q7iv")
@@ -66,13 +66,22 @@ transform = Transform3D(1, -1.11759e-08, 2.23517e-08, -1.11759e-08, 1, -2.49129e
 mesh = SubResource("QuadMesh_3uxvg")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Friend/Camera3D"]
-transform = Transform3D(1, -2.23517e-08, 3.72529e-08, -1.49012e-08, 1, -2.56114e-08, 0, -1.1432e-07, 1, 0.0545861, 0.0759586, -0.750735)
+transform = Transform3D(1, -2.6077e-08, 4.47035e-08, -1.49012e-08, 1, 4.19095e-09, 0, -1.1432e-07, 1, 0.00954258, 0.0784917, -0.753754)
 mesh = SubResource("PlaneMesh_2kfxi")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="MemeLayer" type="CanvasLayer" parent="."]
+layer = -50
 
-[node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_wwjyp")]
+[node name="OnDeathScreen" parent="MemeLayer" instance=ExtResource("8_dfwmo")]
+z_index = 25
+
+[node name="GameOverLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="GameOverLayer" instance=ExtResource("4_wwjyp")]
+z_index = 1
+scale = Vector2(1.00072, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_pwo77")
 autoplay = true
+bus = &"bgm"

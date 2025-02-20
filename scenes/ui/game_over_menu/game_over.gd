@@ -1,6 +1,6 @@
 extends Control
 
-@onready var game_over_reason_label = $MarginContainer/Panel/MarginContainer/VBoxContainer/Label
+@onready var game_over_reason_label = $Panel/MarginContainer/VBoxContainer/Label
 
 func _ready():
 	GameEvents.on_game_over.connect(_on_game_over)

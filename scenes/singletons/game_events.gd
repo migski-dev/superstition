@@ -5,7 +5,7 @@ signal on_crack_step()
 signal on_ladder_step()
 signal on_sister_lost()
 
-var game_over_reason: String
+var game_over_reason: String = ""
 var game_speed: float = 4.0
 var game_speed_rate_of_change: float = 2.0
 var sister: Friend 
