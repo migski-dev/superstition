@@ -2,15 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g8jrh"]
 [ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
+[ext_resource type="Environment" uid="uid://r7xuvkjqy4ye" path="res://assets/environment/environment.tres" id="2_6q7iv"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="2_tms6t"]
 [ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/friend.tscn" id="3_sumrg"]
 [ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over.tscn" id="4_wwjyp"]
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
-[ext_resource type="AudioStream" uid="uid://x32inu8mi8kb" path="res://assets/bgm/Superstition DnB track WIP v2.mp3" id="7_ttei4"]
-
-[sub_resource type="Environment" id="Environment_n2x6o"]
-reflected_light_source = 1
-volumetric_fog_enabled = true
+[ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="8_pwo77"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_143ye"]
 render_priority = 0
@@ -49,7 +46,7 @@ shadow_enabled = true
 shadow_opacity = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_n2x6o")
+environment = ExtResource("2_6q7iv")
 
 [node name="Level" parent="." instance=ExtResource("1_ouqqb")]
 
@@ -77,5 +74,5 @@ mesh = SubResource("PlaneMesh_2kfxi")
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_wwjyp")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ttei4")
+stream = ExtResource("8_pwo77")
 autoplay = true

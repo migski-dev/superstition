@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buychxw6qvcct"
+path="res://.godot/imported/Superstition DnB loop.ogg-0d0aa74f8453805454e66902bff27eb7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/bgm/Superstition DnB loop.ogg"
+dest_files=["res://.godot/imported/Superstition DnB loop.ogg-0d0aa74f8453805454e66902bff27eb7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
