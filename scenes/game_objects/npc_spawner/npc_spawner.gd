@@ -3,9 +3,9 @@ extends Node3D
 @export var npc_type_array: Array[PackedScene] = []
 @export var right_side: bool = true
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
-var min_time: int = 1
-var max_time: int = 2
-var spawn_interval = 2.0
+var min_time: int = 3
+var max_time: int = 6
+var spawn_interval = 5.0
 
 
 

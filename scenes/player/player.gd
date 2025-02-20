@@ -13,8 +13,9 @@ const JUMP_VELOCITY = 4.5
 @onready var anim_player = $SUPERSTITION_PLAYER_FIX/AnimationPlayer
 
 func _ready() -> void:
-	GameEvents.connect("on_crack_step",_on_crack_gameover);
-	GameEvents.connect("on_ladder_step",_on_ladder_gameover);
+	GameEvents.connect("on_crack_step",_on_crack_gameover)
+	GameEvents.connect("on_ladder_step",_on_ladder_gameover)
+	GameEvents.connect("on_sister_lost", _on_sister_lost)
 	anim_player.play("Run", -1, 1.5)
 
 func _physics_process(delta):
@@ -76,10 +77,6 @@ func detect_pole_split() -> void:
 			GameEvents.game_over_reason = "YOU SPLIT THE POLE"
 			GameEvents.on_game_over.emit()
 	
-func _on_visible_on_screen_notifier_3d_screen_exited():
-	GameEvents.game_over_reason = "YOU LOST YOUR FRIEND!"
-	GameEvents.on_game_over.emit()
-	
 func _on_crack_gameover():
 	GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
 	GameEvents.on_game_over.emit()
@@ -90,3 +87,6 @@ func _on_ladder_gameover():
 	GameEvents.on_game_over.emit()
 	print('PASSED UNDER A LADDER - LUCK LOSS')
 	
+func _on_sister_lost():
+	GameEvents.game_over_reason = "YOU LOST YOUR SISTER"
+	GameEvents.on_game_over.emit()

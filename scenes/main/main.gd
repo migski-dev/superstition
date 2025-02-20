@@ -6,6 +6,7 @@ extends Node3D
 func _ready():
 	game_over_ui.visible = false
 	GameEvents.connect("on_game_over", _on_game_over)
+	GameEvents.sister = $Friend
 
 func _on_game_over():
 	Engine.time_scale = 0
