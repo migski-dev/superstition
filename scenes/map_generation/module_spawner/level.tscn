@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/map_generation/module_spawner/level.gd" id="1_gww00"]
 [ext_resource type="PackedScene" uid="uid://bv7a823bq6jgm" path="res://scenes/map_generation/modules/pole_module.tscn" id="2_krt2a"]
 [ext_resource type="PackedScene" uid="uid://bgskqj1w4xpw7" path="res://scenes/map_generation/modules/start_module.tscn" id="2_ofaa0"]
+[ext_resource type="PackedScene" uid="uid://dtm6o5vipje6e" path="res://scenes/map_generation/modules/ladders&cracks_module.tscn" id="3_bk0fl"]
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_gww00")
