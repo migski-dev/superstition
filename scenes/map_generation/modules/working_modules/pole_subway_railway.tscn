@@ -1,0 +1,130 @@
+[gd_scene load_steps=17 format=3 uid="uid://c4e75mm6iavw4"]
+
+[ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_sn68a"]
+[ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="2_nm28y"]
+[ext_resource type="PackedScene" uid="uid://c68q6do3jgx3y" path="res://scenes/game_objects/npc_spawner/npc_spawner.tscn" id="3_ienum"]
+[ext_resource type="Texture2D" uid="uid://b2n34ixxrblhg" path="res://assets/materials/Plaster/Plaster_20-128x128.png" id="4_dx260"]
+[ext_resource type="PackedScene" uid="uid://b38t8g6e8oql" path="res://assets/interior assets/Pieces/wall door.fbx" id="5_cxurm"]
+[ext_resource type="Texture2D" uid="uid://c3hia0xegttu0" path="res://assets/materials/Metal/Metal_06-128x128.png" id="6_swe61"]
+[ext_resource type="Texture2D" uid="uid://hdtnodhaq0cn" path="res://assets/materials/Metal/Metal_03-128x128.png" id="7_2alot"]
+[ext_resource type="Texture2D" uid="uid://dfq0lxgluct33" path="res://assets/materials/Tile/Tile_15-128x128.png" id="8_yke1o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_typav"]
+albedo_texture = ExtResource("2_nm28y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67r5p"]
+albedo_texture = ExtResource("2_nm28y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxqy1"]
+albedo_texture = ExtResource("2_nm28y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_luung"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("4_dx260")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgu0b"]
+albedo_texture = ExtResource("6_swe61")
+uv1_scale = Vector3(20, 40, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sivpp"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("4_dx260")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k40ua"]
+albedo_texture = ExtResource("7_2alot")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hgpx"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("8_yke1o")
+emission = Color(0.255659, 0.255659, 0.255659, 1)
+subsurf_scatter_strength = 0.5
+subsurf_scatter_transmittance_enabled = true
+uv1_scale = Vector3(10, 40, 10)
+uv1_triplanar_sharpness = 14.4199
+texture_filter = 4
+
+[node name="Pole_Module_Subway_Railway" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000977516, 0.00880408, 0.000139236)
+script = ExtResource("1_sn68a")
+
+[node name="Pole2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1449, 2.55343, -1.99607)
+layers = 2
+use_collision = true
+collision_layer = 2
+size = Vector3(0.271973, 4.07031, 0.331543)
+material = SubResource("StandardMaterial3D_typav")
+
+[node name="Pole3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64061, 2.5, 2)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.271973, 4.07031, 0.331543)
+material = SubResource("StandardMaterial3D_67r5p")
+
+[node name="Pole4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170263, 2.5168, -0.0247793)
+layers = 2
+use_collision = true
+collision_layer = 2
+size = Vector3(0.5, 4.07, 0.5)
+material = SubResource("StandardMaterial3D_lxqy1")
+
+[node name="NpcSpawner" parent="." instance=ExtResource("3_ienum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -2)
+right_side = false
+
+[node name="NpcSpawner2" parent="." instance=ExtResource("3_ienum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, 2)
+right_side = false
+
+[node name="Right Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0006, 0.914531, 0.0149474)
+cast_shadow = 0
+size = Vector3(1, 3, 6.065)
+material = SubResource("StandardMaterial3D_luung")
+
+[node name="wall door" parent="." instance=ExtResource("5_cxurm")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 18.609, 0.407923, 14.9509)
+
+[node name="wall door2" parent="." instance=ExtResource("5_cxurm")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 18.609, 0.407923, 11.6655)
+
+[node name="Backwall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4943, 1.9985, -0.0117643)
+material_override = SubResource("StandardMaterial3D_pgu0b")
+cast_shadow = 0
+size = Vector3(1, 3, 6.065)
+material = SubResource("StandardMaterial3D_sivpp")
+
+[node name="Subway Column" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5797, 2.05994, -0.0277107)
+cast_shadow = 0
+size = Vector3(1, 3, 1)
+material = SubResource("StandardMaterial3D_sivpp")
+
+[node name="RailFloor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7331, -0.00360752, -0.00423027)
+use_collision = true
+collision_mask = 8
+size = Vector3(4, 1, 6)
+material = SubResource("StandardMaterial3D_k40ua")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Decal" type="Decal" parent="StaticBody3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49703, -0.00180376, -0.00211477)
+use_collision = true
+collision_mask = 8
+size = Vector3(21.877, 1, 6)
+material = SubResource("StandardMaterial3D_5hgpx")

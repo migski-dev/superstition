@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelSegment" load_steps=5 format=3 uid="uid://ckqjyq0ict0qv"]
+
+[ext_resource type="PackedScene" uid="uid://bv7a823bq6jgm" path="res://scenes/map_generation/modules/working_modules/pole_subway_exit.tscn" id="1_brflb"]
+[ext_resource type="PackedScene" uid="uid://bqoyuguwl4uom" path="res://scenes/map_generation/modules/working_modules/pole_ladder_subway_a.tscn" id="2_363kj"]
+[ext_resource type="Script" path="res://scenes/map_generation/module_spawner/level_segment.gd" id="2_td5c7"]
+[ext_resource type="PackedScene" uid="uid://c4e75mm6iavw4" path="res://scenes/map_generation/modules/working_modules/pole_subway_railway.tscn" id="2_y6ht1"]
+
+[resource]
+script = ExtResource("2_td5c7")
+name = "Subway"
+scenes = Array[PackedScene]([ExtResource("1_brflb"), ExtResource("2_y6ht1"), ExtResource("1_brflb"), ExtResource("2_363kj"), ExtResource("2_y6ht1")])

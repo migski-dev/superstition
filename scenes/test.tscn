@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c68q6do3jgx3y" path="res://scenes/game_objects/npc_spawner/npc_spawner.tscn" id="1_67w03"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="3_whsha"]
-[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/friend.tscn" id="4_8bl17"]
+[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/sister.tscn" id="4_8bl17"]
 
 [sub_resource type="Environment" id="Environment_seyvu"]
 
