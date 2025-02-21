@@ -10,6 +10,7 @@ func _ready():
 	meme_layer.visible = false
 	GameEvents.connect("on_game_over", _on_game_over)
 	GameEvents.sister = $Friend
+	AudioWrapper.play_music(AudioEnum.Music.BGM, 1.0)
 
 func _on_game_over():
 	Engine.time_scale = 0

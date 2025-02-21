@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdh62o75gsq3g"]
+
+[ext_resource type="Script" path="res://component/supplemental/resize_on_disabled_stretch_mode/resize_on_disabled_stretch_mode.gd" id="1_frlod"]
+
+[node name="ControlResizeTextFont" type="Node"]
+script = ExtResource("1_frlod")

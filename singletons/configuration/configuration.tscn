@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqny02vjtqsld"]
+
+[ext_resource type="Script" path="res://singletons/configuration/configuration.gd" id="1_q8nkj"]
+[ext_resource type="PackedScene" uid="uid://p82qg3wny3y8" path="res://singletons/configuration/configuration_audio/configuration_audio.tscn" id="2_42ju8"]
+
+[node name="Configuration" type="Node"]
+script = ExtResource("1_q8nkj")
+
+[node name="ConfigurationAudio" parent="." instance=ExtResource("2_42ju8")]

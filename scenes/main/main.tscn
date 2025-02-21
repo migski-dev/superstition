@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgi0rqnvkfmw7"]
+[gd_scene load_steps=15 format=3 uid="uid://bgi0rqnvkfmw7"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g8jrh"]
 [ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
 [ext_resource type="PackedScene" uid="uid://drq4bukm47wl6" path="res://scenes/ui/on_death_screens/on_death_screen.tscn" id="8_dfwmo"]
 [ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="8_pwo77"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="10_fu3oj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_143ye"]
 render_priority = 0
@@ -83,5 +84,9 @@ scale = Vector2(1.00072, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_pwo77")
-autoplay = true
 bus = &"bgm"
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("10_fu3oj")
+label = "music"
+bus = "bgm"

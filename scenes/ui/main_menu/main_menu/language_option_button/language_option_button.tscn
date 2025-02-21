@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjo0dka4vld2w"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu/language_option_button/language_option_button.gd" id="1_0ivng"]
+[ext_resource type="PackedScene" uid="uid://b4b36g3uhwemg" path="res://component/audio/tree_audio/button_audio/button_audio.tscn" id="2_fgg8j"]
+
+[node name="LanguageOptionButton" type="OptionButton"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 16
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "ENGLISH"
+script = ExtResource("1_0ivng")
+
+[node name="ButtonAudio" parent="." instance=ExtResource("2_fgg8j")]
