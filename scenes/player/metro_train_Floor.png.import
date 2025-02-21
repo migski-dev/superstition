@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i652wc8k3ip3"
-path.s3tc="res://.godot/imported/metro_vending_machine_Vending_machine.png-97f9f2d4ac209e893d06b4e2894e4446.s3tc.ctex"
+uid="uid://bw3ykranu5tqe"
+path.s3tc="res://.godot/imported/metro_train_Floor.png-d00e8baeae27dd4629c716708f5ad94a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9c1820d98caa9407423a1edf8d4f44b8"
+"md5": "fbdc35024cd8db1290046c8fa077eae7"
 }
 
 [deps]
 
-source_file="res://assets/metro_vending_machine_Vending_machine.png"
-dest_files=["res://.godot/imported/metro_vending_machine_Vending_machine.png-97f9f2d4ac209e893d06b4e2894e4446.s3tc.ctex"]
+source_file="res://scenes/player/metro_train_Floor.png"
+dest_files=["res://.godot/imported/metro_train_Floor.png-d00e8baeae27dd4629c716708f5ad94a.s3tc.ctex"]
 
 [params]
 

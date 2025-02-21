@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://v5h6evpjskkd"
-path="res://.godot/imported/metro_ticket.glb-a8cd5c00833212e3b266d948a7733f71.scn"
+uid="uid://dyht8cowt7n8e"
+path="res://.godot/imported/metro_train.glb-ec12d7f75b94047a7f0059f439773b88.scn"
 
 [deps]
 
-source_file="res://assets/metro_ticket.glb"
-dest_files=["res://.godot/imported/metro_ticket.glb-a8cd5c00833212e3b266d948a7733f71.scn"]
+source_file="res://scenes/player/metro_train.glb"
+dest_files=["res://.godot/imported/metro_train.glb-ec12d7f75b94047a7f0059f439773b88.scn"]
 
 [params]
 

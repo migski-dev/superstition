@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://40ilwhkl1es8"
-path="res://.godot/imported/metro_vending_machine.glb-c03c81c91e38cbab2490563bf6ac3d73.scn"
+uid="uid://co4whpm0hdy65"
+path="res://.godot/imported/metro_ticket.glb-613a2f67775227bd07973ee70a8b03c1.scn"
 
 [deps]
 
-source_file="res://assets/metro_vending_machine.glb"
-dest_files=["res://.godot/imported/metro_vending_machine.glb-c03c81c91e38cbab2490563bf6ac3d73.scn"]
+source_file="res://assets/metro_ticket/metro_ticket.glb"
+dest_files=["res://.godot/imported/metro_ticket.glb-613a2f67775227bd07973ee70a8b03c1.scn"]
 
 [params]
 
