@@ -16,9 +16,8 @@ const JUMP_VELOCITY = 4.5
 @onready var anim_player = $SUPERSTITION_PLAYER_FIX/AnimationPlayer
 
 func _ready() -> void:
-	GameEvents.connect("on_crack_step",_on_crack_gameover)
-	GameEvents.connect("on_ladder_step",_on_ladder_gameover)
-	GameEvents.connect("on_sister_lost", _on_sister_lost)
+	GameEvents.connect("on_crack_step",_on_crack_gameover);
+	GameEvents.connect("on_ladder_step",_on_ladder_gameover);
 	anim_player.play("Run", -1, 1.5)
 
 func _physics_process(delta):

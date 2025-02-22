@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
 [ext_resource type="Environment" uid="uid://r7xuvkjqy4ye" path="res://assets/environment/environment.tres" id="2_6q7iv"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="2_tms6t"]
-[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/friend.tscn" id="3_sumrg"]
-[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over_menu/game_over.tscn" id="4_wwjyp"]
+[ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/sister.tscn" id="3_sumrg"]
+[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over.tscn" id="4_wwjyp"]
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
 [ext_resource type="Script" path="res://scenes/main/camera.gd" id="6_y57uh"]
 [ext_resource type="PackedScene" uid="uid://cst4jn4fxc6ln" path="res://scenes/ui/score_ui/score_ui.tscn" id="7_khfnf"]
@@ -54,22 +54,22 @@ environment = ExtResource("2_6q7iv")
 
 [node name="Player" parent="." node_paths=PackedStringArray("friend") instance=ExtResource("2_tms6t")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 1, 0)
-friend = NodePath("../Friend")
+friend = NodePath("../Sister")
 
-[node name="Friend" parent="." instance=ExtResource("3_sumrg")]
-transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 1)
+[node name="Sister" parent="." instance=ExtResource("3_sumrg")]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0.506459, 1)
 
-[node name="Camera3D" type="Camera3D" parent="Friend"]
-transform = Transform3D(0.0871558, 0.640342, -0.763129, 0, 0.766044, 0.642788, 0.996195, -0.0560227, 0.0667652, -5.72247, 3.08379, 1.29671)
+[node name="Camera3D" type="Camera3D" parent="Sister"]
+transform = Transform3D(0.104528, 0.612289, -0.783694, 0, 0.788011, 0.615661, 0.994522, -0.0643541, 0.0823695, -5.722, 3.084, 1.1)
 fov = 70.0
 script = ExtResource("6_y57uh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Friend/Camera3D"]
-transform = Transform3D(1, -1.11759e-08, 2.23517e-08, -1.11759e-08, 1, -2.49129e-08, 7.45058e-09, -1.13621e-07, 1, 0.049533, 0.0388329, -0.706491)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sister/Camera3D"]
+transform = Transform3D(1, 7.45058e-09, -7.45058e-09, -7.45058e-09, 1, 5.82077e-08, 7.45058e-09, -5.82077e-08, 1, 0.0104718, 0.0413603, -0.709727)
 mesh = SubResource("QuadMesh_3uxvg")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Friend/Camera3D"]
-transform = Transform3D(1, -2.6077e-08, 4.47035e-08, -1.49012e-08, 1, 4.19095e-09, 0, -1.1432e-07, 1, 0.00954258, 0.0784917, -0.753754)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sister/Camera3D"]
+transform = Transform3D(1.5, 1.11759e-08, 1.33227e-15, -1.11759e-08, 1.5, 1.78115e-07, -5.20401e-18, -1.78115e-07, 1.5, 0.0155249, 0.0784858, -0.75397)
 mesh = SubResource("PlaneMesh_2kfxi")
 
 [node name="ScoreLayer" type="CanvasLayer" parent="."]
