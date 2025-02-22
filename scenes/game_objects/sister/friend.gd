@@ -16,7 +16,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	velocity = Vector3.RIGHT * SPEED
+	velocity = Vector3.RIGHT * GameEvents.game_speed#SPEED
 	move_and_slide()
 
 

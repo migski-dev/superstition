@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/friend.tscn" id="3_sumrg"]
 [ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over_menu/game_over.tscn" id="4_wwjyp"]
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
+[ext_resource type="Script" path="res://scenes/main/camera.gd" id="6_y57uh"]
 [ext_resource type="PackedScene" uid="uid://cst4jn4fxc6ln" path="res://scenes/ui/score_ui/score_ui.tscn" id="7_khfnf"]
 [ext_resource type="PackedScene" uid="uid://drq4bukm47wl6" path="res://scenes/ui/on_death_screens/on_death_screen.tscn" id="8_dfwmo"]
-[ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="8_pwo77"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="10_fu3oj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_143ye"]
@@ -62,6 +62,7 @@ transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 1)
 [node name="Camera3D" type="Camera3D" parent="Friend"]
 transform = Transform3D(0.0871558, 0.640342, -0.763129, 0, 0.766044, 0.642788, 0.996195, -0.0560227, 0.0667652, -5.72247, 3.08379, 1.29671)
 fov = 70.0
+script = ExtResource("6_y57uh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Friend/Camera3D"]
 transform = Transform3D(1, -1.11759e-08, 2.23517e-08, -1.11759e-08, 1, -2.49129e-08, 7.45058e-09, -1.13621e-07, 1, 0.049533, 0.0388329, -0.706491)
@@ -86,10 +87,6 @@ z_index = 25
 [node name="GameOver" parent="GameOverLayer" instance=ExtResource("4_wwjyp")]
 z_index = 1
 scale = Vector2(1.00072, 1)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_pwo77")
-bus = &"bgm"
 
 [node name="MusicBank" type="Node" parent="."]
 script = ExtResource("10_fu3oj")

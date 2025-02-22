@@ -52,6 +52,7 @@ func _init_action_handler() -> void:
 
 
 func _action_main_menu_play() -> void:
+	AudioWrapper.stop_music()
 	await get_tree().create_timer(.5).timeout
 	var start_level = start_scene.instantiate()
 	get_tree().root.add_child(start_level)

@@ -30,3 +30,7 @@ func get_instance_poly_sfx(sfx: AudioEnum.Sfx) -> Variant:
 func play_instance(instance: Variant) -> void:
 	instance.trigger()
 	instance.release(true)
+	
+func stop_music() -> void:
+	MusicManager.stop(0.0)
+	
