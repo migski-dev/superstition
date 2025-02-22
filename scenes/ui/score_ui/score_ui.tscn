@@ -1,34 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://cst4jn4fxc6ln"]
+[gd_scene load_steps=4 format=3 uid="uid://cst4jn4fxc6ln"]
 
 [ext_resource type="Script" path="res://scenes/ui/score_ui/score_ui.gd" id="1_7mdfc"]
-[ext_resource type="FontFile" uid="uid://dhkfrkqm0jfky" path="res://resources/fonts/Audiowide-Regular.ttf" id="1_awehm"]
+[ext_resource type="FontFile" uid="uid://dhkfrkqm0jfky" path="res://resource/fonts/Audiowide-Regular.ttf" id="1_awehm"]
+[ext_resource type="Script" path="res://scenes/ui/score_ui/wiggle_polygon.gd" id="2_wblwo"]
 
 [node name="ScoreUi" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -17.0
+offset_right = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7mdfc")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -441.0
+offset_left = -494.0
 offset_top = -115.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.7603, 0.330616, 0.554917, 1)
-theme_override_colors/font_shadow_color = Color(0.524842, 0.111717, 0.667713, 1)
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Poly2" type="Polygon2D" parent="MarginContainer/AspectRatioContainer"]
+position = Vector2(-175, -240)
+color = Color(0.858824, 0.352941, 0.431373, 1)
+polygon = PackedVector2Array(153, 212, 568, 235, 552, 316, 172, 322)
+script = ExtResource("2_wblwo")
+intensity = 40.0
+
+[node name="Poly1" type="Polygon2D" parent="MarginContainer/AspectRatioContainer"]
+position = Vector2(117, 257)
+polygon = PackedVector2Array(319, -258, -125, -269, -158, -189, 280, -189)
+script = ExtResource("2_wblwo")
+intensity = 30.0
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.678431, 0.85098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.858824, 0.352941, 0.431373, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = -4
 theme_override_fonts/font = ExtResource("1_awehm")
 theme_override_font_sizes/font_size = 50
 text = "BOMBACLOT: "
+horizontal_alignment = 2

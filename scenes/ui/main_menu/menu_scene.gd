@@ -27,8 +27,8 @@ func _ready() -> void:
 	_toggle_menu(main_menu)
 	_init_action_handler()
 
-	await MusicManager.loaded
-	AudioWrapper.play_music(AudioEnum.Music.MENU_DOODLE_2_LOOP, 1.0)
+	#await MusicManager.loaded
+	#AudioWrapper.play_music(AudioEnum.Music.MENU_DOODLE_2_LOOP, 1.0)
 
 
 func _init_action_handler() -> void:

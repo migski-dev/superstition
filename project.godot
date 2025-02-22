@@ -45,6 +45,10 @@ enabled=PackedStringArray("res://addons/resonate/plugin.cfg")
 
 player=""
 
+[gui]
+
+theme/custom_font="res://resource/fonts/Audiowide-Regular.ttf"
+
 [input]
 
 ui_left={

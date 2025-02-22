@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cgrx211pduhvq"]
+
+[ext_resource type="FontFile" uid="uid://dhkfrkqm0jfky" path="res://resource/fonts/Audiowide-Regular.ttf" id="1_1gglf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8gfk"]
+bg_color = Color(0.858824, 0.352941, 0.431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skqnb"]
+bg_color = Color(0.678431, 0.85098, 1, 1)
+
+[resource]
+default_font = ExtResource("1_1gglf")
+Button/colors/font_color = Color(0.858824, 0.352941, 0.431373, 1)
+Button/colors/font_focus_color = Color(0.678431, 0.85098, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_e8gfk")
+Button/styles/normal = SubResource("StyleBoxFlat_skqnb")

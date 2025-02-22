@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dmm872xuexixk"]
+
+[ext_resource type="Shader" uid="uid://cncw4mifclngl" path="res://shaders/menu_player.tres" id="1_57bt2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_57bt2")
+shader_parameter/ColorParameter = Color(0.858824, 0.352941, 0.431373, 1)

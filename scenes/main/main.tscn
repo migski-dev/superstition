@@ -5,14 +5,14 @@
 [ext_resource type="Environment" uid="uid://r7xuvkjqy4ye" path="res://assets/environment/environment.tres" id="2_6q7iv"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="2_tms6t"]
 [ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/sister.tscn" id="3_sumrg"]
-[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over.tscn" id="4_wwjyp"]
+[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over_menu/game_over.tscn" id="4_wwjyp"]
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
 [ext_resource type="Script" path="res://scenes/main/camera.gd" id="6_y57uh"]
 [ext_resource type="PackedScene" uid="uid://cst4jn4fxc6ln" path="res://scenes/ui/score_ui/score_ui.tscn" id="7_khfnf"]
 [ext_resource type="PackedScene" uid="uid://drq4bukm47wl6" path="res://scenes/ui/on_death_screens/on_death_screen.tscn" id="8_dfwmo"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="10_fu3oj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_143ye"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj07g"]
 render_priority = 0
 shader = ExtResource("5_gm663")
 shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
@@ -28,32 +28,34 @@ shader_parameter/grazing_angle_mask_power = 1.0
 shader_parameter/grazing_angle_modulation_factor = 50.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_3uxvg"]
-material = SubResource("ShaderMaterial_143ye")
+material = SubResource("ShaderMaterial_uj07g")
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7wlp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0d6m"]
 transparency = 1
 albedo_color = Color(0.663, 0.799, 0.336, 0.2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2kfxi"]
-material = SubResource("StandardMaterial3D_v7wlp")
+material = SubResource("StandardMaterial3D_b0d6m")
 orientation = 2
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_g8jrh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.798846, 0.601536, 0, -0.601536, 0.798846, 0, 3, 0)
+transform = Transform3D(0.965926, -0.0968714, 0.240007, -0.258819, -0.361529, 0.895717, 1.05367e-08, -0.927315, -0.374283, 0, 3, 0)
 shadow_enabled = true
+shadow_opacity = 0.4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_6q7iv")
 
 [node name="Level" parent="." instance=ExtResource("1_ouqqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="Player" parent="." node_paths=PackedStringArray("friend") instance=ExtResource("2_tms6t")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 1, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 5.36066, 1, 0)
 friend = NodePath("../Sister")
 
 [node name="Sister" parent="." instance=ExtResource("3_sumrg")]

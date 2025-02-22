@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c3hia0xegttu0" path="res://assets/materials/Metal/Metal_06-128x128.png" id="5_t0mdt"]
 [ext_resource type="Texture2D" uid="uid://hdtnodhaq0cn" path="res://assets/materials/Metal/Metal_03-128x128.png" id="6_xk04d"]
 [ext_resource type="Texture2D" uid="uid://dfq0lxgluct33" path="res://assets/materials/Tile/Tile_15-128x128.png" id="7_u2o62"]
-[ext_resource type="PackedScene" uid="uid://dyht8cowt7n8e" path="res://scenes/player/metro_train.glb" id="8_g2tox"]
+[ext_resource type="PackedScene" uid="uid://dyht8cowt7n8e" path="res://assets/metro_train/metro_train.glb" id="8_g2tox"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_typav"]
 albedo_texture = ExtResource("2_bgwfw")

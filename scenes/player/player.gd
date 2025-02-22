@@ -18,6 +18,7 @@ const JUMP_VELOCITY = 4.5
 func _ready() -> void:
 	GameEvents.connect("on_crack_step",_on_crack_gameover);
 	GameEvents.connect("on_ladder_step",_on_ladder_gameover);
+	GameEvents.connect("on_sister_lost", _on_sister_lost)
 	anim_player.play("Run", -1, 1.5)
 
 func _physics_process(delta):
@@ -60,6 +61,8 @@ func check_collisions():
 		
 		if collider:
 			if is_instance_of(collider, BlackCat):
+				if game_over:
+					return
 				var cat = collider as BlackCat
 				cat.speed = 0
 				GameEvents.game_over_reason = "YOU CROSSED PATH WITH A BLACK CAT"
@@ -84,24 +87,32 @@ func detect_pole_split() -> void:
 	if pole_raycast.is_colliding():
 		var collider = pole_raycast.get_collider()
 		if collider and not is_instance_of(collider, Friend):
+			if game_over:
+				return
 			GameEvents.on_pole_split.emit()
 			GameEvents.game_over_reason = "YOU SPLIT THE POLE"
 			await play_curse_vfx()
 			#GameEvents.on_game_over.emit()
 	
 func _on_crack_gameover():
+	if game_over:
+		return
 	GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
 	await play_curse_vfx()
 	#GameEvents.on_game_over.emit()
 	print('HIT CRACKS - GAME OVER')
 
 func _on_ladder_gameover():
+	if game_over:
+		return
 	GameEvents.game_over_reason = "YOU LOST A LOT OF LUCK AND DIED"
 	await play_curse_vfx()
 	#GameEvents.on_game_over.emit()
 	print('PASSED UNDER A LADDER - LUCK LOSS')
 	
 func _on_sister_lost():
+	if game_over:
+		return
 	GameEvents.game_over_reason = "YOU LOST YOUR SISTER"
 	await play_curse_vfx()
 	#GameEvents.on_game_over.emit()

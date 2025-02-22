@@ -15,7 +15,7 @@ shader_parameter/Speed = Vector2(0.3, 1)
 shader_parameter/AuraNoise = SubResource("NoiseTexture2D_8066g")
 
 [sub_resource type="Curve" id="Curve_qsw6k"]
-_data = [Vector2(0, 0.020548), 0.0, 0.0, 0, 0, Vector2(0.0564263, 1), 6.88585, 0.0, 0, 0, Vector2(0.360502, 1), 0.0, 0.0, 0, 0, Vector2(0.495298, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.020548), 0.0, 0.0, 0, 0, Vector2(0.0721003, 1), 6.88585, 0.0, 0, 0, Vector2(0.360502, 1), 0.0, 0.0, 0, 0, Vector2(0.495298, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [node name="CurseVfx" type="CPUParticles3D"]

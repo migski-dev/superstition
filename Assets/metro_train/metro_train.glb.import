@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dyht8cowt7n8e"
-path="res://.godot/imported/metro_train.glb-ec12d7f75b94047a7f0059f439773b88.scn"
+path="res://.godot/imported/metro_train.glb-263bd22144314c34f4095eefec9433a5.scn"
 
 [deps]
 
-source_file="res://scenes/player/metro_train.glb"
-dest_files=["res://.godot/imported/metro_train.glb-ec12d7f75b94047a7f0059f439773b88.scn"]
+source_file="res://assets/metro_train/metro_train.glb"
+dest_files=["res://.godot/imported/metro_train.glb-263bd22144314c34f4095eefec9433a5.scn"]
 
 [params]
 
