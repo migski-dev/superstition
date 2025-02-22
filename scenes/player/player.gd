@@ -7,19 +7,25 @@ class_name Player
 var knockback_velocity: Vector3 = Vector3.ZERO
 var is_knocked_back: bool = false
 var knockback_timer: float = 0.0
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+
+@onready var game_over: bool = false
 @onready var pole_raycast: RayCast3D = $RayCast3D
 @onready var anim_player = $SUPERSTITION_PLAYER_FIX/AnimationPlayer
 
 func _ready() -> void:
-	GameEvents.connect("on_crack_step",_on_crack_gameover)
-	GameEvents.connect("on_ladder_step",_on_ladder_gameover)
-	GameEvents.connect("on_sister_lost", _on_sister_lost)
+	GameEvents.connect("on_crack_step",_on_crack_gameover);
+	GameEvents.connect("on_ladder_step",_on_ladder_gameover);
 	anim_player.play("Run", -1, 1.5)
 
 func _physics_process(delta):
 	position.x -= GameEvents.game_speed * delta # Match the speed of the moving modules
+	
+	if(game_over):
+		$CurseVfx.position.x -= GameEvents.game_speed * delta
+		return
 	
 	if is_knocked_back:
 		velocity = knockback_velocity
@@ -54,7 +60,11 @@ func check_collisions():
 		
 		if collider:
 			if is_instance_of(collider, BlackCat):
+				var cat = collider as BlackCat
+				cat.speed = 0
 				GameEvents.game_over_reason = "YOU CROSSED PATH WITH A BLACK CAT"
+				GameEvents.on_black_cat.emit()
+				await play_curse_vfx()
 				GameEvents.on_game_over.emit()
 				print('HIT BLACK CAT - GAME OVER')
 			elif is_instance_of(collider, NPC):
@@ -74,19 +84,33 @@ func detect_pole_split() -> void:
 	if pole_raycast.is_colliding():
 		var collider = pole_raycast.get_collider()
 		if collider and not is_instance_of(collider, Friend):
+			GameEvents.on_pole_split.emit()
 			GameEvents.game_over_reason = "YOU SPLIT THE POLE"
-			GameEvents.on_game_over.emit()
+			await play_curse_vfx()
+			#GameEvents.on_game_over.emit()
 	
 func _on_crack_gameover():
 	GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
-	GameEvents.on_game_over.emit()
+	await play_curse_vfx()
+	#GameEvents.on_game_over.emit()
 	print('HIT CRACKS - GAME OVER')
 
 func _on_ladder_gameover():
 	GameEvents.game_over_reason = "YOU LOST A LOT OF LUCK AND DIED"
-	GameEvents.on_game_over.emit()
+	await play_curse_vfx()
+	#GameEvents.on_game_over.emit()
 	print('PASSED UNDER A LADDER - LUCK LOSS')
 	
 func _on_sister_lost():
 	GameEvents.game_over_reason = "YOU LOST YOUR SISTER"
-	GameEvents.on_game_over.emit()
+	await play_curse_vfx()
+	#GameEvents.on_game_over.emit()
+
+func play_curse_vfx():
+	velocity = Vector3.ZERO
+	game_over = true
+	$CurseVfx.emitting = true
+	anim_player.play("Death")
+	GameEvents.stop_game()
+	await $CurseVfx.finished
+	

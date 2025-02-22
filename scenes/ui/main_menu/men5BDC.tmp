@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7e31uh5wrmi5"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu/menu_scene.gd" id="1_tjy2w"]
+[ext_resource type="PackedScene" uid="uid://b88kuy67g4l8f" path="res://scenes/ui/main_menu/main_menu/main_menu.tscn" id="2_8scvs"]
+[ext_resource type="PackedScene" uid="uid://bea1npdsg7ii1" path="res://scenes/ui/main_menu/options_menu/options_menu.tscn" id="3_5uviw"]
+[ext_resource type="PackedScene" uid="uid://cdpe2qrr0gpen" path="res://scenes/ui/main_menu/credits_menu/credits_menu.tscn" id="4_eej08"]
+[ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://component/builder/ui_builder/ui_builder.tscn" id="6_p1rvd"]
+[ext_resource type="PackedScene" uid="uid://bdh62o75gsq3g" path="res://component/supplemental/resize_on_disabled_stretch_mode/resize_on_disabled_stretch_mode.tscn" id="7_saosi"]
+
+[node name="MenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjy2w")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_8scvs")]
+unique_name_in_owner = true
+layout_mode = 1
+script = null
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_5uviw")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+script = null
+
+[node name="CreditsMenu" parent="." instance=ExtResource("4_eej08")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+script = null
+
+[node name="UiBuilder" parent="." instance=ExtResource("6_p1rvd")]
+
+[node name="ResizeOnDisabledStretchMode" parent="." instance=ExtResource("7_saosi")]
+minimum_width = 682

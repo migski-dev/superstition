@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b27lkg04pkpvo"]
+
+[ext_resource type="Shader" uid="uid://cjbrl8ycgfqti" path="res://scenes/vfx/curse_vfx.tres" id="1_6u7r1"]
+[ext_resource type="ArrayMesh" uid="uid://bvafuf5oyt2a1" path="res://assets/materials/vfx/vfx_pillar.obj" id="2_qwcl5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hqyys"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8066g"]
+noise = SubResource("FastNoiseLite_hqyys")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s31bw"]
+render_priority = 0
+shader = ExtResource("1_6u7r1")
+shader_parameter/Speed = Vector2(0.3, 1)
+shader_parameter/AuraNoise = SubResource("NoiseTexture2D_8066g")
+
+[sub_resource type="Curve" id="Curve_qsw6k"]
+_data = [Vector2(0, 0.020548), 0.0, 0.0, 0, 0, Vector2(0.0564263, 1), 6.88585, 0.0, 0, 0, Vector2(0.360502, 1), 0.0, 0.0, 0, 0, Vector2(0.495298, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="CurseVfx" type="CPUParticles3D"]
+material_override = SubResource("ShaderMaterial_s31bw")
+cast_shadow = 0
+emitting = false
+amount = 1
+one_shot = true
+mesh = ExtResource("2_qwcl5")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_qsw6k")
+color = Color(0.419047, 0.0360738, 0.485792, 1)

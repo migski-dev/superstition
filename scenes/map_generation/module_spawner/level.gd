@@ -6,13 +6,15 @@ var module_queue : Array[PackedScene] = []
 var amount: int = 12
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
 var offset: float = 6.0 # How far each module is
-var init_obs = 0 
+
+var init_obs = 0
 
 @export var level_segments: Array[LevelSegment] = []
 
 func _ready() -> void:
 	for n in amount:
 		spawn_module(n*offset)
+		#spawn_module()
 
 func spawn_module(n: float) -> void:
 	if init_obs > 2:
@@ -36,12 +38,18 @@ func spawn_module(n: float) -> void:
 			
 		var instance:Node3D = module_queue.pop_front().instantiate()
 		instance.position.x = n
+		#instance.global_transform.origin.x = GameEvents.head_module.global_transform.origin.x 
 		add_child(instance)
 		
 	#sets 3 starting modules at beginning
 	else:
 		var instance = modules[0].instantiate()
 		instance.position.x = n
+		#instance.position.x = GameEvents.head_position
 		add_child(instance)
 		
 		init_obs += 1
+	
+	GameEvents.head_position += GameEvents.module_offset
+	
+	

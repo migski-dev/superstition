@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cst4jn4fxc6ln"]
+
+[ext_resource type="Script" path="res://scenes/ui/score_ui/score_ui.gd" id="1_7mdfc"]
+[ext_resource type="FontFile" uid="uid://dhkfrkqm0jfky" path="res://resources/fonts/Audiowide-Regular.ttf" id="1_awehm"]
+
+[node name="ScoreUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7mdfc")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -441.0
+offset_top = -115.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7603, 0.330616, 0.554917, 1)
+theme_override_colors/font_shadow_color = Color(0.524842, 0.111717, 0.667713, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = -4
+theme_override_fonts/font = ExtResource("1_awehm")
+theme_override_font_sizes/font_size = 50
+text = "BOMBACLOT: "

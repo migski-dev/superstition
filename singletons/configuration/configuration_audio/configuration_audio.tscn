@@ -1,0 +1,87 @@
+[gd_scene load_steps=21 format=3 uid="uid://p82qg3wny3y8"]
+
+[ext_resource type="Script" path="res://singletons/configuration/configuration_audio/configuration_audio.gd" id="1_l13f0"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="2_73r41"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="3_nskvx"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="4_7tjbj"]
+[ext_resource type="AudioStream" uid="uid://g7q0kw0852i3" path="res://assets/music/menu_doodle_2_loop/ogg/menu_doodle_2_loop.ogg" id="5_04j5d"]
+[ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="6_1o8y6"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="6_ltbsi"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="7_5rfmr"]
+[ext_resource type="AudioStream" uid="uid://c60x06lxg8pbp" path="res://assets/sfx/kenny_ui/ogg/click4.ogg" id="8_mhkoh"]
+[ext_resource type="AudioStream" uid="uid://bxfhjuk1e7whg" path="res://assets/sfx/kenny_ui/ogg/click5.ogg" id="9_weny0"]
+[ext_resource type="AudioStream" uid="uid://ced1dvacxwaeu" path="res://assets/sfx/kenny_ui/ogg/mouseclick1.ogg" id="10_geadk"]
+[ext_resource type="AudioStream" uid="uid://t5x2o001rg8u" path="res://assets/sfx/kenny_ui/ogg/mouserelease1.ogg" id="11_j271d"]
+
+[sub_resource type="Resource" id="Resource_00y01"]
+script = ExtResource("4_7tjbj")
+name = ""
+enabled = true
+volume = 0.0
+stream = ExtResource("5_04j5d")
+
+[sub_resource type="Resource" id="Resource_e4xvl"]
+script = ExtResource("3_nskvx")
+name = "menu_doodle_2_loop"
+bus = "Music"
+stems = Array[ExtResource("4_7tjbj")]([SubResource("Resource_00y01")])
+
+[sub_resource type="Resource" id="Resource_7emt5"]
+script = ExtResource("4_7tjbj")
+name = "superstition dnb loop"
+enabled = true
+volume = 0.0
+stream = ExtResource("6_1o8y6")
+
+[sub_resource type="Resource" id="Resource_ictto"]
+script = ExtResource("3_nskvx")
+name = "bgm"
+bus = "Music"
+stems = Array[ExtResource("4_7tjbj")]([SubResource("Resource_7emt5")])
+
+[sub_resource type="Resource" id="Resource_n3cwq"]
+script = ExtResource("7_5rfmr")
+name = "click"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("8_mhkoh")])
+
+[sub_resource type="Resource" id="Resource_vhah6"]
+script = ExtResource("7_5rfmr")
+name = "select"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("9_weny0")])
+
+[sub_resource type="Resource" id="Resource_plwwx"]
+script = ExtResource("7_5rfmr")
+name = "select_2"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("10_geadk")])
+
+[sub_resource type="Resource" id="Resource_ajfa0"]
+script = ExtResource("7_5rfmr")
+name = "click_2"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("11_j271d")])
+
+[node name="ConfigurationAudio" type="Node"]
+script = ExtResource("1_l13f0")
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("2_73r41")
+label = "music"
+bus = "Music"
+tracks = Array[ExtResource("3_nskvx")]([SubResource("Resource_e4xvl"), SubResource("Resource_ictto")])
+
+[node name="SoundBank" type="Node" parent="."]
+script = ExtResource("6_ltbsi")
+label = "sfx"
+bus = "SFX"
+events = Array[ExtResource("7_5rfmr")]([SubResource("Resource_n3cwq"), SubResource("Resource_vhah6"), SubResource("Resource_plwwx"), SubResource("Resource_ajfa0")])
