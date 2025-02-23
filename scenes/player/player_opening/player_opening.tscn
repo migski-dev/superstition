@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=3 uid="uid://jummqxgk5t5r"]
+
+[ext_resource type="PackedScene" uid="uid://caelkrvhalpq" path="res://assets/player/SUPERSTITION_PLAYER_FIX.glb" id="1_dyy0p"]
+[ext_resource type="Script" path="res://scenes/main/camera.gd" id="2_02wri"]
+[ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="3_e8q8c"]
+[ext_resource type="PackedScene" uid="uid://bgskqj1w4xpw7" path="res://scenes/map_generation/modules/working_modules/subway/subway_start.tscn" id="4_dhv3g"]
+[ext_resource type="Texture2D" uid="uid://cqgki7fg770w6" path="res://assets/memes/rule_cat.png" id="5_i006u"]
+[ext_resource type="Texture2D" uid="uid://b8ppk0xbx15rn" path="res://assets/memes/rule_ladder.png" id="6_fm2ef"]
+[ext_resource type="Texture2D" uid="uid://5rc8rfjyun0w" path="res://assets/memes/rule_crack.png" id="7_3tc6x"]
+[ext_resource type="Texture2D" uid="uid://bfra4rday4lnu" path="res://assets/memes/rule_pole.png" id="8_4hff8"]
+[ext_resource type="PackedScene" uid="uid://dv8x6p2p2hfaw" path="res://scenes/game_objects/sister/superstition_sister.tscn" id="9_mjjkk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0d6m"]
+transparency = 1
+albedo_color = Color(0.663, 0.799, 0.336, 0.2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v4t7c"]
+material = SubResource("StandardMaterial3D_b0d6m")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj07g"]
+render_priority = 0
+shader = ExtResource("3_e8q8c")
+shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 1.3
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ag83q"]
+material = SubResource("ShaderMaterial_uj07g")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="PlayerOpening" type="Node3D"]
+
+[node name="SUPERSTITION_PLAYER_FIX" parent="." instance=ExtResource("1_dyy0p")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.8049, 0.670673, 8.80342)
+
+[node name="Skeleton3D" parent="SUPERSTITION_PLAYER_FIX/Armature" index="0"]
+bones/0/position = Vector3(-0.0211877, -10.8784, -106.133)
+bones/0/rotation = Quaternion(-0.575173, -0.010708, 0.00939166, 0.817908)
+bones/1/rotation = Quaternion(0.128503, 0.00210374, 0.00517027, 0.991693)
+bones/2/position = Vector3(1.86265e-07, 8.38226, -1.01281e-05)
+bones/2/rotation = Quaternion(0.0878609, 0.000988713, 0.00305634, 0.996128)
+bones/3/rotation = Quaternion(0.0878487, 0.000304434, 0.00316354, 0.996129)
+bones/4/rotation = Quaternion(-0.12457, -0.00173705, -0.00073578, 0.992209)
+bones/5/rotation = Quaternion(-0.398733, -0.00879396, -0.00592148, 0.917006)
+bones/7/position = Vector3(4.35621, 8.60196, 0.00522791)
+bones/7/rotation = Quaternion(0.618178, 0.375984, -0.582799, 0.369915)
+bones/8/position = Vector3(7.30391e-06, 9.95798, -6.62549e-06)
+bones/8/rotation = Quaternion(0.252959, -0.054055, 0.354099, 0.898723)
+bones/9/rotation = Quaternion(-0.0134513, -0.00137455, 0.800991, 0.598524)
+bones/10/position = Vector3(-1.45435e-05, 19.9662, -4.49736e-06)
+bones/11/rotation = Quaternion(0.58406, -0.397294, 0.596368, 0.381283)
+bones/12/position = Vector3(1.11681e-05, 9.95798, 4.38009e-06)
+bones/12/rotation = Quaternion(0.23557, 0.0139719, -0.332244, 0.913195)
+bones/13/position = Vector3(4.01373e-06, 24.8964, -3.17911e-06)
+bones/13/rotation = Quaternion(-0.0197638, 0.00120761, -0.821436, 0.569957)
+bones/14/position = Vector3(9.65595e-06, 19.9679, 3.56325e-06)
+bones/15/rotation = Quaternion(0.0872786, 0.407607, 0.9075, -0.0517889)
+bones/16/rotation = Quaternion(-0.291784, -0.0864789, 0.0152519, 0.952445)
+bones/17/rotation = Quaternion(0.40569, -0.091418, 0.0100593, 0.909372)
+bones/18/rotation = Quaternion(0.389039, 0.00731548, -0.00307075, 0.921187)
+bones/20/rotation = Quaternion(-0.222128, 0.408038, 0.885501, -0.00722565)
+bones/21/position = Vector3(2.03405e-06, 45.117, 3.40055e-06)
+bones/21/rotation = Quaternion(-0.28866, 0.0706963, -0.0726176, 0.952052)
+bones/22/rotation = Quaternion(0.398776, 0.0382054, 0.0311466, 0.915722)
+bones/23/position = Vector3(-2.28495e-06, 28.9554, -3.79177e-08)
+bones/23/rotation = Quaternion(0.401654, -0.00795622, 0.00348961, 0.91575)
+
+[node name="AnimationPlayer" parent="SUPERSTITION_PLAYER_FIX" index="1"]
+autoplay = "Idle"
+
+[node name="Camera3D" type="Camera3D" parent="SUPERSTITION_PLAYER_FIX"]
+transform = Transform3D(-0.964786, 0.0297761, -0.261344, 0, 0.993572, 0.113202, 0.263034, 0.109216, -0.958585, 0.0330607, 1.9252, -2.30077)
+fov = 70.0
+script = ExtResource("2_02wri")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SUPERSTITION_PLAYER_FIX/Camera3D"]
+transform = Transform3D(1.5, 1.11686e-08, -7.45058e-09, -1.11759e-08, 1.5, 1.78115e-07, 0, -1.78115e-07, 1.5, 0.259988, 0.0784755, -0.766784)
+mesh = SubResource("PlaneMesh_v4t7c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SUPERSTITION_PLAYER_FIX/Camera3D"]
+transform = Transform3D(1, 7.50515e-09, -7.45058e-09, -7.39237e-09, 1, 5.96046e-08, 3.72529e-09, -6.15255e-08, 1, 0.119914, 0.0413556, -0.715463)
+mesh = SubResource("QuadMesh_ag83q")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="rule_cats" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-0.162319, 0, -0.0174615, 0, 0.163256, 0, 0.0174615, 0, -0.162319, -0.567119, 2.87403, 8.64307)
+billboard = 1
+texture = ExtResource("5_i006u")
+
+[node name="rule_ladders" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(0.159271, 0, 0.0346684, 0, 0.163, 0, -0.0346684, 0, 0.159271, -0.11193, 2.48099, 8.42803)
+billboard = 1
+texture = ExtResource("6_fm2ef")
+
+[node name="rule_crack" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(0.159271, 0, 0.0346684, 0, 0.163, 0, -0.0346684, 0, 0.159271, -1.34064, 2.90683, 8.76277)
+billboard = 1
+texture = ExtResource("7_3tc6x")
+
+[node name="rule_pole" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(0.159271, 0, 0.0346684, 0, 0.163, 0, -0.0346684, 0, 0.159271, -1.42481, 2.3683, 8.33902)
+billboard = 1
+texture = ExtResource("8_4hff8")
+
+[node name="start_module" parent="." instance=ExtResource("4_dhv3g")]
+
+[node name="Left Wall" parent="start_module" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1177, 2.56259, -1.9577)
+size = Vector3(1, 6.0127, 17.952)
+
+[node name="Floor" parent="start_module" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49703, -0.00180376, -1.51554)
+size = Vector3(21.877, 1, 17.2915)
+
+[node name="metro_bench" parent="start_module" index="3"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 10.3873, 1, -4.14716)
+
+[node name="metro_map3" parent="start_module" index="8"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.6511, 2.99867, -0.0618111)
+
+[node name="metro_trashcan2" parent="start_module" index="10"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.81137, 1.00664, 3.60995)
+
+[node name="Rules" type="CanvasLayer" parent="."]
+
+[node name="SUPERSTITION_SISTER" parent="." instance=ExtResource("9_mjjkk")]
+transform = Transform3D(0.202638, 0, -0.825493, 0, 0.85, 0, 0.825493, 0, 0.202638, 0.99305, 0.535637, 8.75877)
+
+[editable path="SUPERSTITION_PLAYER_FIX"]
+[editable path="start_module"]

@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="11_656sw"]
 [ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://component/builder/ui_builder/ui_builder.tscn" id="12_q0asn"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj07g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf8sx"]
 render_priority = 0
 shader = ExtResource("5_gm663")
 shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
@@ -29,16 +29,16 @@ shader_parameter/grazing_angle_mask_power = 1.0
 shader_parameter/grazing_angle_modulation_factor = 50.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_3uxvg"]
-material = SubResource("ShaderMaterial_uj07g")
+material = SubResource("ShaderMaterial_yf8sx")
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0d6m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c03uu"]
 transparency = 1
 albedo_color = Color(0.663, 0.799, 0.336, 0.2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2kfxi"]
-material = SubResource("StandardMaterial3D_b0d6m")
+material = SubResource("StandardMaterial3D_c03uu")
 orientation = 2
 
 [node name="Main" type="Node3D"]
