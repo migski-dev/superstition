@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgmveud6nhn64"
-path.s3tc="res://.godot/imported/metro_train_Trains.png-c44712c29a1c1cd524b825039cd1269f.s3tc.ctex"
+uid="uid://dnkxwd44g05j1"
+path.s3tc="res://.godot/imported/Tv1_TV_05.jpg-a5f268da9e0004eccf5e5339b8d50fa9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/lowpoly_assets/Models/metro_train/metro_train_Trains.png"
-dest_files=["res://.godot/imported/metro_train_Trains.png-c44712c29a1c1cd524b825039cd1269f.s3tc.ctex"]
+source_file="res://assets/lowpoly_assets/Models/TVs/TV1/Tv1_TV_05.jpg"
+dest_files=["res://.godot/imported/Tv1_TV_05.jpg-a5f268da9e0004eccf5e5339b8d50fa9.s3tc.ctex"]
 
 [params]
 

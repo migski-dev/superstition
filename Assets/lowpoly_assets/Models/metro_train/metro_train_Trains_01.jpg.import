@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgmveud6nhn64"
-path.s3tc="res://.godot/imported/metro_train_Trains.png-c44712c29a1c1cd524b825039cd1269f.s3tc.ctex"
+uid="uid://cs72pk408yif4"
+path.s3tc="res://.godot/imported/metro_train_Trains_01.jpg-20e6de3f83cca038c71d08f722c7405d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/lowpoly_assets/Models/metro_train/metro_train_Trains.png"
-dest_files=["res://.godot/imported/metro_train_Trains.png-c44712c29a1c1cd524b825039cd1269f.s3tc.ctex"]
+source_file="res://assets/lowpoly_assets/Models/metro_train/metro_train_Trains_01.jpg"
+dest_files=["res://.godot/imported/metro_train_Trains_01.jpg-20e6de3f83cca038c71d08f722c7405d.s3tc.ctex"]
 
 [params]
 

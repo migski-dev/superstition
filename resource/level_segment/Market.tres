@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="LevelSegment" load_steps=9 format=3 uid="uid://c4r62w2qnyvbw"]
 
-[ext_resource type="PackedScene" uid="uid://gaicvuusuj2g" path="res://scenes/map_generation/modules/working_modules/market/market_start.tscn" id="1_2n71n"]
-[ext_resource type="PackedScene" uid="uid://cs33cv2wx4lxf" path="res://scenes/map_generation/modules/working_modules/market/market_1.tscn" id="2_35led"]
+[ext_resource type="PackedScene" uid="uid://gaicvuusuj2g" path="res://scenes/map_generation/modules/working_modules/market_b/market_start_b.tscn" id="1_2n71n"]
+[ext_resource type="PackedScene" uid="uid://cs33cv2wx4lxf" path="res://scenes/map_generation/modules/working_modules/market_b/market_1_b.tscn" id="2_35led"]
 [ext_resource type="Script" path="res://resource/level_segment/_level_segment.gd" id="2_fa6c0"]
-[ext_resource type="PackedScene" uid="uid://cac53ekg5ffne" path="res://scenes/map_generation/modules/working_modules/market/market_start2.tscn" id="3_nu3fc"]
-[ext_resource type="PackedScene" uid="uid://b231sjiprpvoh" path="res://scenes/map_generation/modules/working_modules/market/market_2.tscn" id="4_8ebme"]
-[ext_resource type="PackedScene" uid="uid://cqug0mv3draie" path="res://scenes/map_generation/modules/working_modules/market/market_3.tscn" id="5_sjj3a"]
-[ext_resource type="PackedScene" uid="uid://bv2hgdfc12liq" path="res://scenes/map_generation/modules/working_modules/market/market-subway-connection.tscn" id="6_rm6ky"]
-[ext_resource type="PackedScene" uid="uid://tmryufmhuh1q" path="res://scenes/map_generation/modules/working_modules/market/market-subway-connection2.tscn" id="7_6se6v"]
+[ext_resource type="PackedScene" uid="uid://cac53ekg5ffne" path="res://scenes/map_generation/modules/working_modules/market_b/market_start2_b.tscn" id="3_nu3fc"]
+[ext_resource type="PackedScene" uid="uid://b231sjiprpvoh" path="res://scenes/map_generation/modules/working_modules/market_b/market_2_b.tscn" id="4_8ebme"]
+[ext_resource type="PackedScene" uid="uid://cqug0mv3draie" path="res://scenes/map_generation/modules/working_modules/market_b/market_3_b.tscn" id="5_sjj3a"]
+[ext_resource type="PackedScene" uid="uid://bv2hgdfc12liq" path="res://scenes/map_generation/modules/working_modules/market_b/market-subway-connection_b.tscn" id="6_rm6ky"]
+[ext_resource type="PackedScene" uid="uid://tmryufmhuh1q" path="res://scenes/map_generation/modules/working_modules/market_b/market-subway-connection2_b.tscn" id="7_6se6v"]
 
 [resource]
 script = ExtResource("2_fa6c0")

@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgi0rqnvkfmw7"]
+[gd_scene load_steps=25 format=3 uid="uid://bgi0rqnvkfmw7"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g8jrh"]
 [ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
 [ext_resource type="Environment" uid="uid://r7xuvkjqy4ye" path="res://assets/environment/environment.tres" id="2_6q7iv"]
 [ext_resource type="PackedScene" uid="uid://6dolhtpyubc5" path="res://scenes/player/player.tscn" id="2_tms6t"]
 [ext_resource type="PackedScene" uid="uid://xmy011wfnfu3" path="res://scenes/game_objects/sister/sister.tscn" id="3_sumrg"]
+[ext_resource type="PackedScene" uid="uid://bgskqj1w4xpw7" path="res://scenes/map_generation/modules/working_modules/subway/subway_start.tscn" id="4_2jp5y"]
 [ext_resource type="Script" path="res://resource/level_segment/_level_segment.gd" id="4_hnvvg"]
-[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over_menu/game_over_menu/game_over.tscn" id="4_wwjyp"]
+[ext_resource type="PackedScene" uid="uid://cwitbybfu7bid" path="res://scenes/ui/game_over_menu/game_over.tscn" id="4_wwjyp"]
 [ext_resource type="Resource" uid="uid://c4r62w2qnyvbw" path="res://resource/level_segment/Market.tres" id="5_bm6xu"]
 [ext_resource type="Resource" uid="uid://ckqjyq0ict0qv" path="res://resource/level_segment/Subway.tres" id="5_gj01n"]
 [ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="5_gm663"]
@@ -16,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://drq4bukm47wl6" path="res://scenes/ui/on_death_screens/on_death_screen.tscn" id="8_dfwmo"]
 [ext_resource type="Resource" uid="uid://d4b8aem76qnyg" path="res://resource/level_segment/Subway_a.tres" id="8_dqyi0"]
 [ext_resource type="Resource" uid="uid://b6u71j3emyvk" path="res://resource/level_segment/Market_b.tres" id="9_pgln2"]
+[ext_resource type="Resource" uid="uid://bwgt6ehwg3nvp" path="res://resource/level_segment/subway_b.tres" id="10_uwmt5"]
 [ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="11_656sw"]
 [ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://component/builder/ui_builder/ui_builder.tscn" id="12_q0asn"]
-[ext_resource type="Resource" uid="uid://bwgt6ehwg3nvp" path="res://resource/level_segment/subway_b.tres" id="10_uwmt5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj07g"]
 render_priority = 0
@@ -60,6 +61,7 @@ shadow_opacity = 0.4
 environment = ExtResource("2_6q7iv")
 
 [node name="Level" parent="." instance=ExtResource("1_ouqqb")]
+modules = Array[PackedScene]([ExtResource("4_2jp5y")])
 level_segments = Array[ExtResource("4_hnvvg")]([ExtResource("5_gj01n"), ExtResource("5_bm6xu"), ExtResource("7_44vl7"), ExtResource("8_dqyi0"), ExtResource("9_pgln2"), ExtResource("10_uwmt5")])
 
 [node name="Player" parent="." node_paths=PackedStringArray("friend") instance=ExtResource("2_tms6t")]

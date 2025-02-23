@@ -29,6 +29,7 @@ func spawn_module(n: float) -> void:
 		var num = rng.randi_range(0,level_segments.size()-1)
 		var position : int = 0
 		
+		print(num)
 		if module_queue.size() + level_segments[num].scenes.size() <= amount:
 			for seg in level_segments[num].scenes:
 				position += 1

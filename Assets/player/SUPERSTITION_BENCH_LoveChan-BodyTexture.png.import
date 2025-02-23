@@ -2,30 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/lowpoly_assets/Models/metro_train/metro_train_Trains.png.import
-uid="uid://bq1v7pagxufie"
-path.s3tc="res://.godot/imported/metro_train_Trains.png-c44712c29a1c1cd524b825039cd1269f.s3tc.ctex"
-========
-uid="uid://c77fci4uakh71"
+uid="uid://dr71acgeegwjn"
 path.s3tc="res://.godot/imported/SUPERSTITION_BENCH_LoveChan-BodyTexture.png-4b4c688bb24b6a0a5e75f5d3d5325aff.s3tc.ctex"
->>>>>>>> origin/main:Assets/player/SUPERSTITION_BENCH_LoveChan-BodyTexture.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "3a74ee56c77bdaee8f8ef8055acec587"
-}
 
 [deps]
 
-<<<<<<<< HEAD:Assets/lowpoly_assets/Models/metro_train/metro_train_Trains.png.import
-source_file="res://assets/lowpoly_assets/Models/metro_train/metro_train_Trains.png"
-dest_files=["res://.godot/imported/metro_train_Trains.png-c44712c29a1c1cd524b825039cd1269f.s3tc.ctex"]
-========
 source_file="res://assets/player/SUPERSTITION_BENCH_LoveChan-BodyTexture.png"
 dest_files=["res://.godot/imported/SUPERSTITION_BENCH_LoveChan-BodyTexture.png-4b4c688bb24b6a0a5e75f5d3d5325aff.s3tc.ctex"]
->>>>>>>> origin/main:Assets/player/SUPERSTITION_BENCH_LoveChan-BodyTexture.png.import
 
 [params]
 

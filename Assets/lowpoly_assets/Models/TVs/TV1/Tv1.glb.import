@@ -3,23 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<<< HEAD:Assets/lowpoly_assets/Models/TVs/TV1/Tv1.glb.import
-uid="uid://daw1fv63donmk"
+uid="uid://dd1hxxqr4vg3s"
 path="res://.godot/imported/Tv1.glb-3bd0a7886cf7f4ef9c37c2fb2030f7e0.scn"
 
 [deps]
 
 source_file="res://assets/lowpoly_assets/Models/TVs/TV1/Tv1.glb"
 dest_files=["res://.godot/imported/Tv1.glb-3bd0a7886cf7f4ef9c37c2fb2030f7e0.scn"]
-========
-uid="uid://dyht8cowt7n8e"
-path="res://.godot/imported/metro_train.glb-263bd22144314c34f4095eefec9433a5.scn"
-
-[deps]
-
-source_file="res://assets/metro_train/metro_train.glb"
-dest_files=["res://.godot/imported/metro_train.glb-263bd22144314c34f4095eefec9433a5.scn"]
->>>>>>>> origin/main:Assets/lowpoly_assets/Models/metro_train/metro_train.glb.import
 
 [params]
 
@@ -42,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

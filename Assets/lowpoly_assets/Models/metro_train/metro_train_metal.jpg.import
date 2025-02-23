@@ -2,30 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/lowpoly_assets/Models/metro_train/metro_train_metal.jpg.import
-uid="uid://b6n4cttjn6ek7"
+uid="uid://coew5p75khsqs"
 path.s3tc="res://.godot/imported/metro_train_metal.jpg-4acfb41bce6a9f32f836a1ec0cded649.s3tc.ctex"
-========
-uid="uid://ckxej52jvxuds"
-path.s3tc="res://.godot/imported/SUPERSTITION_BENCH_Chair.png-a7fb77e3ddb14c47324852bc0754ba3d.s3tc.ctex"
->>>>>>>> origin/main:Assets/player/SUPERSTITION_BENCH_Chair.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "c3425e6a9c616e22b12bc4f1dde9c21f"
-}
 
 [deps]
 
-<<<<<<<< HEAD:Assets/lowpoly_assets/Models/metro_train/metro_train_metal.jpg.import
 source_file="res://assets/lowpoly_assets/Models/metro_train/metro_train_metal.jpg"
 dest_files=["res://.godot/imported/metro_train_metal.jpg-4acfb41bce6a9f32f836a1ec0cded649.s3tc.ctex"]
-========
-source_file="res://assets/player/SUPERSTITION_BENCH_Chair.png"
-dest_files=["res://.godot/imported/SUPERSTITION_BENCH_Chair.png-a7fb77e3ddb14c47324852bc0754ba3d.s3tc.ctex"]
->>>>>>>> origin/main:Assets/player/SUPERSTITION_BENCH_Chair.png.import
 
 [params]
 
