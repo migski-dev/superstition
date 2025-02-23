@@ -10,7 +10,8 @@ signal on_black_cat()
 var game_over_reason: String = ""
 var game_speed: float = 4.0
 var game_speed_rate_of_change: float = 2.0
-var sister: Friend 
+var sister: Friend
+var player: Player
 var head_position: float = 0.0
 var head_module: Node3D
 var module_offset: float = 6.0
@@ -20,7 +21,7 @@ var slow_mo: bool = false
 
 func stop_game():
 	game_speed = 0.0
-	await get_tree().create_timer(.7).timeout
+	await get_tree().create_timer(1.5).timeout
 	GameEvents.game_speed = 4.0
 	Engine.time_scale = .1
 	await get_tree().create_timer(0.15).timeout

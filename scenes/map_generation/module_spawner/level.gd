@@ -16,7 +16,7 @@ func _ready() -> void:
 		spawn_module(n*offset)
 
 func spawn_module(n: float) -> void:
-	if init_obs > 2:
+	if init_obs > 4:
 		#INITIAL BEHAVIOR - RANDOM SPAWN 
 		#rng.randomize()
 		#var num = rng.randi_range(1,modules.size()-1)

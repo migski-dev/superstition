@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu0dyfa4mrd6a"]
+
+[ext_resource type="PackedScene" uid="uid://4s8bva87i75l" path="res://scenes/player/superstition_player.tscn" id="1_rcn8s"]
+[ext_resource type="Material" uid="uid://dmm872xuexixk" path="res://shaders/menu_player_material.tres" id="2_hws6o"]
+
+[node name="SUPERSTITION_PLAYER_FIX" instance=ExtResource("1_rcn8s")]
+
+[node name="Arms" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Chest" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Face" parent="Armature/Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Hair" parent="Armature/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Legs" parent="Armature/Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Neck" parent="Armature/Skeleton3D" index="5"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Shoes" parent="Armature/Skeleton3D" index="6"]
+surface_material_override/0 = ExtResource("2_hws6o")
+
+[node name="Waist" parent="Armature/Skeleton3D" index="7"]
+surface_material_override/0 = ExtResource("2_hws6o")

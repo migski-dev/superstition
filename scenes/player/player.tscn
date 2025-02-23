@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://6dolhtpyubc5"]
+[gd_scene load_steps=6 format=3 uid="uid://6dolhtpyubc5"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_t8afa"]
 [ext_resource type="PackedScene" uid="uid://4s8bva87i75l" path="res://scenes/player/superstition_player.tscn" id="2_3qwpo"]
-[ext_resource type="PackedScene" uid="uid://b27lkg04pkpvo" path="res://scenes/vfx/curse_vfx.tscn" id="3_ih0hi"]
+[ext_resource type="PackedScene" uid="uid://b27lkg04pkpvo" path="res://scenes/vfx/curse_vfx.tscn" id="3_7judk"]
+[ext_resource type="AudioStream" uid="uid://crqh77o4ateeo" path="res://assets/sfx/death.ogg" id="4_ehfgo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1l0sa"]
 
@@ -26,6 +27,17 @@ shape = SubResource("CapsuleShape3D_1l0sa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29133, 0)
 collision_mask = 2
 
-[node name="CurseVfx" parent="." instance=ExtResource("3_ih0hi")]
+[node name="CurseVfx" parent="." instance=ExtResource("3_7judk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00088, 0)
+lifetime = 1.45
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.206419, 0.00829526, 0.24328, 1)
+
+[node name="DeathSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ehfgo")
+bus = &"sfx"
 
 [editable path="SUPERSTITION_PLAYER_FIX"]

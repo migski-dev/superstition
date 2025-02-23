@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://coe7gr5yun2iu"]
+
+[ext_resource type="PackedScene" uid="uid://dv8x6p2p2hfaw" path="res://scenes/game_objects/sister/superstition_sister.tscn" id="1_habyg"]
+[ext_resource type="Material" uid="uid://dhau01cl4y23w" path="res://shaders/menu_sister_material.tres" id="2_meuea"]
+
+[node name="SUPERSTITION_SISTER" instance=ExtResource("1_habyg")]
+
+[node name="Arms" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Chest" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Face" parent="Armature/Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Feet" parent="Armature/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Hair" parent="Armature/Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Legs" parent="Armature/Skeleton3D" index="5"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Neck" parent="Armature/Skeleton3D" index="6"]
+surface_material_override/0 = ExtResource("2_meuea")
+
+[node name="Waist" parent="Armature/Skeleton3D" index="7"]
+surface_material_override/0 = ExtResource("2_meuea")

@@ -1,12 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7e31uh5wrmi5"]
+[gd_scene load_steps=19 format=3 uid="uid://b7e31uh5wrmi5"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/menu_scene.gd" id="1_tjy2w"]
 [ext_resource type="PackedScene" uid="uid://b88kuy67g4l8f" path="res://scenes/ui/main_menu/main_menu/main_menu.tscn" id="2_8scvs"]
 [ext_resource type="PackedScene" uid="uid://bea1npdsg7ii1" path="res://scenes/ui/main_menu/options_menu/options_menu.tscn" id="3_5uviw"]
-[ext_resource type="FontFile" uid="uid://dhkfrkqm0jfky" path="res://resources/fonts/Audiowide-Regular.ttf" id="3_mm4ut"]
+[ext_resource type="FontFile" uid="uid://dhkfrkqm0jfky" path="res://resource/fonts/Audiowide-Regular.ttf" id="3_mm4ut"]
 [ext_resource type="PackedScene" uid="uid://cdpe2qrr0gpen" path="res://scenes/ui/main_menu/credits_menu/credits_menu.tscn" id="4_eej08"]
+[ext_resource type="PackedScene" uid="uid://bu0dyfa4mrd6a" path="res://scenes/player/menu_player.tscn" id="6_d240k"]
 [ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://component/builder/ui_builder/ui_builder.tscn" id="6_p1rvd"]
+[ext_resource type="PackedScene" uid="uid://coe7gr5yun2iu" path="res://shaders/menu_sister.tscn" id="7_oqhfi"]
 [ext_resource type="PackedScene" uid="uid://bdh62o75gsq3g" path="res://component/supplemental/resize_on_disabled_stretch_mode/resize_on_disabled_stretch_mode.tscn" id="7_saosi"]
+[ext_resource type="Theme" uid="uid://cgrx211pduhvq" path="res://resource/theme/theme.tres" id="8_f1yh0"]
+[ext_resource type="Script" path="res://scenes/main/camera.gd" id="9_sqlqx"]
+[ext_resource type="Shader" path="res://shaders/outlines.gdshader" id="10_8qes6"]
+[ext_resource type="AudioStream" uid="uid://dlai7h345iuy7" path="res://assets/bgm/Superstition Main Menu -- fade out.ogg" id="13_6lasl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ywyb"]
+render_priority = 0
+shader = ExtResource("10_8qes6")
+shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 1.3
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_qrj0c"]
+material = SubResource("ShaderMaterial_5ywyb")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8cei"]
+transparency = 1
+albedo_color = Color(0.663, 0.799, 0.336, 0.2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_usvkt"]
+material = SubResource("StandardMaterial3D_m8cei")
+orientation = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4r6s7"]
+viewport_path = NodePath("svp_player")
 
 [node name="MenuScene" type="Control"]
 layout_mode = 3
@@ -17,12 +54,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tjy2w")
 
+[node name="svp_player" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 1
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="svp_player"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.1031, 3.7845, 4.09374)
+fov = 66.9
+script = ExtResource("9_sqlqx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="svp_player/Camera3D"]
+transform = Transform3D(1, 7.45058e-09, -7.45058e-09, -7.45058e-09, 1, 5.82077e-08, 7.45058e-09, -5.82077e-08, 1, 0.0104718, 0.0413603, -0.709727)
+visible = false
+mesh = SubResource("QuadMesh_qrj0c")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="svp_player/Camera3D"]
+transform = Transform3D(1.5, 1.11759e-08, 1.33227e-15, -1.11759e-08, 1.5, 1.78115e-07, -5.20401e-18, -1.78115e-07, 1.5, 0.0155249, 0.0784858, -0.75397)
+visible = false
+mesh = SubResource("PlaneMesh_usvkt")
+
+[node name="PINK_PLAYER" parent="svp_player" instance=ExtResource("6_d240k")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -4.99726)
+
+[node name="BLUE_SISTER" parent="svp_player" instance=ExtResource("7_oqhfi")]
+transform = Transform3D(2.43, 0, 7.10543e-15, 0, 2.43, 0, -7.10543e-15, 0, 2.43, 0, 0, 12.9029)
+
 [node name="MainMenu" parent="." instance=ExtResource("2_8scvs")]
 unique_name_in_owner = true
 layout_mode = 1
 
+[node name="ColorRect" type="ColorRect" parent="MainMenu/RootMarginContainer" index="0"]
+z_index = -1111
+z_as_relative = false
+layout_mode = 2
+color = Color(0.768627, 0.603922, 0.717647, 1)
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/RootMarginContainer/AspectRatioContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_4r6s7")
+
 [node name="TitleLabel" parent="MainMenu/RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuLabelsVBoxContainer" index="0"]
+theme_override_colors/font_color = Color(0.858824, 0.352941, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0.678431, 0.85098, 1, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
 theme_override_fonts/font = ExtResource("3_mm4ut")
+theme_override_font_sizes/font_size = 81
+text = "SUPERSTITION"
+
+[node name="PlayMenuButton" parent="MainMenu/RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" index="0"]
+theme = ExtResource("8_f1yh0")
+
+[node name="OptionsMenuButton" parent="MainMenu/RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" index="1"]
+theme = ExtResource("8_f1yh0")
+
+[node name="CreditsMenuButton" parent="MainMenu/RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" index="2"]
+theme = ExtResource("8_f1yh0")
+
+[node name="QuitMenuButton" parent="MainMenu/RootMarginContainer/AspectRatioContainer/CenterContainer/MainMenuMarginContainer/MainMenuVBoxContainer/MainMenuButtonsVBoxContainer" index="3"]
+theme = ExtResource("8_f1yh0")
 
 [node name="OptionsMenu" parent="." instance=ExtResource("3_5uviw")]
 unique_name_in_owner = true
@@ -38,5 +132,10 @@ layout_mode = 1
 
 [node name="ResizeOnDisabledStretchMode" parent="." instance=ExtResource("7_saosi")]
 minimum_width = 682
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_6lasl")
+autoplay = true
+bus = &"bgm"
 
 [editable path="MainMenu"]

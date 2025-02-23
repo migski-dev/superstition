@@ -10,10 +10,11 @@ func _ready() -> void:
 	GameEvents.on_ladder_step.connect(_pause_score)
 	GameEvents.on_sister_lost.connect(_pause_score)
 
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	if not game_over:
 		score += 3
-		$ScoreLabel.text = StringUtils.join(["Score: ", str(score)]) 
+		%ScoreLabel.text = StringUtils.join(["Score: ", str(score)]) 
+		
 
 func _pause_score() -> void:
 	game_over = true

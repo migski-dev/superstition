@@ -3,6 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD:Assets/lowpoly_assets/Models/metro_train/metro_train.glb.import
 uid="uid://rucv18y7it4d"
 path="res://.godot/imported/metro_train.glb-1462b8c16f70b0c46faeba53b34b700b.scn"
 
@@ -10,6 +11,25 @@ path="res://.godot/imported/metro_train.glb-1462b8c16f70b0c46faeba53b34b700b.scn
 
 source_file="res://assets/lowpoly_assets/Models/metro_train/metro_train.glb"
 dest_files=["res://.godot/imported/metro_train.glb-1462b8c16f70b0c46faeba53b34b700b.scn"]
+=======
+<<<<<<<< HEAD:Assets/lowpoly_assets/Models/TVs/TV1/Tv1.glb.import
+uid="uid://daw1fv63donmk"
+path="res://.godot/imported/Tv1.glb-3bd0a7886cf7f4ef9c37c2fb2030f7e0.scn"
+
+[deps]
+
+source_file="res://assets/lowpoly_assets/Models/TVs/TV1/Tv1.glb"
+dest_files=["res://.godot/imported/Tv1.glb-3bd0a7886cf7f4ef9c37c2fb2030f7e0.scn"]
+========
+uid="uid://dyht8cowt7n8e"
+path="res://.godot/imported/metro_train.glb-263bd22144314c34f4095eefec9433a5.scn"
+
+[deps]
+
+source_file="res://assets/metro_train/metro_train.glb"
+dest_files=["res://.godot/imported/metro_train.glb-263bd22144314c34f4095eefec9433a5.scn"]
+>>>>>>>> origin/main:Assets/lowpoly_assets/Models/metro_train/metro_train.glb.import
+>>>>>>> origin/main:Assets/metro_train/metro_train.glb.import
 
 [params]
 

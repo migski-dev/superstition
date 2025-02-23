@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1fus7fsrb572"
-path="res://.godot/imported/burn_superstition.png-d4bb3baa896e3a74a32b20fdaee78613.ctex"
+uid="uid://cg3mkn6son34i"
+path="res://.godot/imported/death_splash_ladder1.png-42d37d8e7cc96f80e6ed648ba465b101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/memes/burn_superstition.png"
-dest_files=["res://.godot/imported/burn_superstition.png-d4bb3baa896e3a74a32b20fdaee78613.ctex"]
+source_file="res://assets/memes/death_splash_ladder1.png"
+dest_files=["res://.godot/imported/death_splash_ladder1.png-42d37d8e7cc96f80e6ed648ba465b101.ctex"]
 
 [params]
 

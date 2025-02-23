@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://drq4bukm47wl6"]
+[gd_scene load_steps=9 format=3 uid="uid://drq4bukm47wl6"]
 
-[ext_resource type="Texture2D" uid="uid://b1fus7fsrb572" path="res://assets/memes/burn_superstition.png" id="1_moh82"]
+[ext_resource type="Script" path="res://scenes/ui/on_death_screens/on_death_screen.gd" id="1_63ore"]
+[ext_resource type="Texture2D" uid="uid://b1fus7fsrb572" path="res://assets/memes/death_splash_pole.png" id="1_moh82"]
+[ext_resource type="Theme" uid="uid://cgrx211pduhvq" path="res://resource/theme/theme.tres" id="2_vba2p"]
+[ext_resource type="Texture2D" uid="uid://c64bpr50fndjs" path="res://assets/memes/death_splash_cat.png" id="3_wddxm"]
+[ext_resource type="Texture2D" uid="uid://iilh48y25510" path="res://assets/memes/death_splash_crack.png" id="4_3k08b"]
+[ext_resource type="Texture2D" uid="uid://dxxfj43041hc3" path="res://assets/memes/death_splash_ladder.png" id="6_rn7vs"]
+[ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://component/control/control_grab_focus/control_grab_focus.tscn" id="7_t3o0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in2yd"]
 
 [node name="OnDeathScreen" type="Control"]
 layout_mode = 3
@@ -9,14 +17,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_63ore")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -25,9 +28,111 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment_horizontal = 0
+alignment_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer"]
+z_index = -4096
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+color = Color(0.768627, 0.603922, 0.717647, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer"]
+custom_minimum_size = Vector2(1152, 648)
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="AspectRatioContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="DeathSplashCat" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_wddxm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DeathSplashPole" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 texture = ExtResource("1_moh82")
-expand_mode = 2
+expand_mode = 1
 stretch_mode = 4
+
+[node name="DeathSplashLadder" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("6_rn7vs")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DeathSplashCrack" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("4_3k08b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.858824, 0.352941, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0.678431, 0.85098, 1, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 45
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+z_index = 3
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_vba2p")
+theme_override_colors/font_color = Color(0.858824, 0.352941, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0.678431, 0.85098, 1, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 41
+text = "Game Over"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 305
+theme_override_styles/separator = SubResource("StyleBoxEmpty_in2yd")
+
+[node name="Button" type="Button" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+z_index = 1630
+z_as_relative = false
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_vba2p")
+text = "Restart"
+
+[node name="ControlGrabFocus" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_t3o0u")]
+
+[connection signal="pressed" from="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

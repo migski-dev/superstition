@@ -13,6 +13,7 @@ config_version=5
 config/name="superstition_gamejam"
 run/main_scene="res://scenes/ui/main_menu/menu_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://assets/memes/SuperstitionCover.png"
 config/icon="res://icon.svg"
 
 [audio]
@@ -48,6 +49,10 @@ import/blender/enabled=false
 [global_group]
 
 player=""
+
+[gui]
+
+theme/custom_font="res://resource/fonts/Audiowide-Regular.ttf"
 
 [input]
 
