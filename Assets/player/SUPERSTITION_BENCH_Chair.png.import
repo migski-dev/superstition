@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmeyba4h2341"
-path.s3tc="res://.godot/imported/metro_train_metal_03.jpg-454e53de81a9465949b02660db193da9.s3tc.ctex"
+uid="uid://ckxej52jvxuds"
+path.s3tc="res://.godot/imported/SUPERSTITION_BENCH_Chair.png-a7fb77e3ddb14c47324852bc0754ba3d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cfb5c8c984e17ebb19aee1f7ac34d2fa"
+"md5": "c3425e6a9c616e22b12bc4f1dde9c21f"
 }
 
 [deps]
 
-source_file="res://scenes/player/metro_train_metal_03.jpg"
-dest_files=["res://.godot/imported/metro_train_metal_03.jpg-454e53de81a9465949b02660db193da9.s3tc.ctex"]
+source_file="res://assets/player/SUPERSTITION_BENCH_Chair.png"
+dest_files=["res://.godot/imported/SUPERSTITION_BENCH_Chair.png-a7fb77e3ddb14c47324852bc0754ba3d.s3tc.ctex"]
 
 [params]
 

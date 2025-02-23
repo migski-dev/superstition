@@ -97,9 +97,9 @@ size_flags_vertical = 8
 layout_mode = 2
 focus_neighbor_right = NodePath("../ResetMenuButton")
 theme_override_font_sizes/font_size = 24
-text = "       MENU_LABEL_BACK       "
+text = "       Back       "
 id = 5
-label = "MENU_LABEL_BACK"
+label = "Back"
 
 [node name="PaddingMarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -110,6 +110,6 @@ layout_mode = 2
 focus_neighbor_left = NodePath("../BackMenuButton")
 focus_neighbor_right = NodePath("../../../TabMarginContainer/TabHBoxContainer/AudioMenuButton")
 theme_override_font_sizes/font_size = 24
-text = "       MENU_LABEL_RESET       "
+text = "       Reset       "
 id = 6
-label = "MENU_LABEL_RESET"
+label = "Reset"

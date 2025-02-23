@@ -44,3 +44,6 @@ bones/22/rotation = Quaternion(0.517599, 0.0323625, 0.0352367, 0.854285)
 bones/22/scale = Vector3(1, 1, 1)
 bones/23/rotation = Quaternion(0.387573, 0.00139942, -0.000732155, 0.921838)
 bones/23/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "RUN"

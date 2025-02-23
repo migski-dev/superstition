@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw3ykranu5tqe"
-path.s3tc="res://.godot/imported/metro_train_Floor.png-d00e8baeae27dd4629c716708f5ad94a.s3tc.ctex"
+uid="uid://c77fci4uakh71"
+path.s3tc="res://.godot/imported/SUPERSTITION_BENCH_LoveChan-BodyTexture.png-4b4c688bb24b6a0a5e75f5d3d5325aff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fbdc35024cd8db1290046c8fa077eae7"
+"md5": "3a74ee56c77bdaee8f8ef8055acec587"
 }
 
 [deps]
 
-source_file="res://scenes/player/metro_train_Floor.png"
-dest_files=["res://.godot/imported/metro_train_Floor.png-d00e8baeae27dd4629c716708f5ad94a.s3tc.ctex"]
+source_file="res://assets/player/SUPERSTITION_BENCH_LoveChan-BodyTexture.png"
+dest_files=["res://.godot/imported/SUPERSTITION_BENCH_LoveChan-BodyTexture.png-4b4c688bb24b6a0a5e75f5d3d5325aff.s3tc.ctex"]
 
 [params]
 

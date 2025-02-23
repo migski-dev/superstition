@@ -11,6 +11,8 @@ func _ready():
 	
 
 func _shake_camera():
+	if GameEvents.player.game_over:
+		return
 	var initial_transform = self.transform 
 	var elapsed_time = 0.0
 
