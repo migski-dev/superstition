@@ -1,10 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0aaxvqwir740"]
+[gd_scene load_steps=7 format=3 uid="uid://b0aaxvqwir740"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/cracks/cracks.gd" id="1_g36u5"]
 [ext_resource type="Texture2D" uid="uid://030dfonellr6" path="res://scenes/game_objects/cracks/cracks.png" id="2_7886k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0k3mh"]
 size = Vector3(1.29343, 0.0552979, 0.151413)
+
+[sub_resource type="Animation" id="Animation_qi78n"]
+resource_name = "glow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(100, 98.919, 100, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vqvsc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofb6u"]
+_data = {
+"RESET": SubResource("Animation_vqvsc"),
+"glow": SubResource("Animation_qi78n")
+}
 
 [node name="Cracks" type="Area3D"]
 collision_mask = 9
@@ -19,5 +55,10 @@ texture = ExtResource("2_7886k")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.247374, 0.0069046)
 shape = SubResource("BoxShape3D_0k3mh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ofb6u")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

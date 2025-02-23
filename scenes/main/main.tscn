@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgi0rqnvkfmw7"]
+[gd_scene load_steps=17 format=3 uid="uid://bgi0rqnvkfmw7"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_g8jrh"]
 [ext_resource type="PackedScene" uid="uid://bruj7nokoyb5q" path="res://scenes/map_generation/module_spawner/level.tscn" id="1_ouqqb"]
@@ -10,7 +10,8 @@
 [ext_resource type="Script" path="res://scenes/main/camera.gd" id="6_y57uh"]
 [ext_resource type="PackedScene" uid="uid://cst4jn4fxc6ln" path="res://scenes/ui/score_ui/score_ui.tscn" id="7_khfnf"]
 [ext_resource type="PackedScene" uid="uid://drq4bukm47wl6" path="res://scenes/ui/on_death_screens/on_death_screen.tscn" id="8_dfwmo"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="10_fu3oj"]
+[ext_resource type="AudioStream" uid="uid://buychxw6qvcct" path="res://assets/bgm/Superstition DnB loop.ogg" id="11_656sw"]
+[ext_resource type="PackedScene" uid="uid://cvaa73qxuiw6n" path="res://component/builder/ui_builder/ui_builder.tscn" id="12_q0asn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj07g"]
 render_priority = 0
@@ -79,18 +80,21 @@ mesh = SubResource("PlaneMesh_2kfxi")
 [node name="ScoreUi" parent="ScoreLayer" instance=ExtResource("7_khfnf")]
 
 [node name="MemeLayer" type="CanvasLayer" parent="."]
-layer = -50
+layer = 66
 
 [node name="OnDeathScreen" parent="MemeLayer" instance=ExtResource("8_dfwmo")]
 z_index = 25
 
 [node name="GameOverLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="GameOver" parent="GameOverLayer" instance=ExtResource("4_wwjyp")]
 z_index = 1
 scale = Vector2(1.00072, 1)
 
-[node name="MusicBank" type="Node" parent="."]
-script = ExtResource("10_fu3oj")
-label = "music"
-bus = "bgm"
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_656sw")
+autoplay = true
+bus = &"bgm"
+
+[node name="UiBuilder" parent="." instance=ExtResource("12_q0asn")]

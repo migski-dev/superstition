@@ -37,13 +37,14 @@ size_flags_vertical = 8
 
 [node name="Poly2" type="Polygon2D" parent="MarginContainer/AspectRatioContainer"]
 position = Vector2(-175, -240)
-color = Color(0.858824, 0.352941, 0.431373, 1)
+color = Color(0.768627, 0.603922, 0.717647, 1)
 polygon = PackedVector2Array(153, 212, 568, 235, 552, 316, 172, 322)
 script = ExtResource("2_wblwo")
 intensity = 40.0
 
 [node name="Poly1" type="Polygon2D" parent="MarginContainer/AspectRatioContainer"]
 position = Vector2(117, 257)
+color = Color(0.603922, 0.768627, 0.654902, 1)
 polygon = PackedVector2Array(319, -258, -125, -269, -158, -189, 280, -189)
 script = ExtResource("2_wblwo")
 intensity = 30.0
@@ -52,8 +53,8 @@ intensity = 30.0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.678431, 0.85098, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.858824, 0.352941, 0.431373, 1)
+theme_override_colors/font_color = Color(0.858824, 0.352941, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0.678431, 0.85098, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5

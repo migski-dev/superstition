@@ -90,7 +90,7 @@ layout_mode = 1
 z_index = -1111
 z_as_relative = false
 layout_mode = 2
-color = Color(1, 0.945098, 0.00392157, 1)
+color = Color(0.768627, 0.603922, 0.717647, 1)
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/RootMarginContainer/AspectRatioContainer" index="0"]
 layout_mode = 2

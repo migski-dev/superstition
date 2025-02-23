@@ -69,10 +69,10 @@ func check_collisions():
 				GameEvents.on_black_cat.emit()
 				await play_curse_vfx()
 				GameEvents.on_game_over.emit()
-				print('HIT BLACK CAT - GAME OVER')
+				
 			elif is_instance_of(collider, NPC):
 				apply_knockback(collider)
-				print('HIT NPC - KNOCKBACK')
+				
 		
 func apply_knockback(npc: NPC) -> void:
 	var direction: Vector3 = (global_transform.origin - npc.global_transform.origin).normalized()
@@ -97,7 +97,7 @@ func detect_pole_split() -> void:
 func _on_crack_gameover():
 	if game_over:
 		return
-	GameEvents.game_over_reason = "YOU BROKE YOUR MOTHER'S BACK..."
+	GameEvents.game_over_reason = "YOU STEPPED ON A CRACK"
 	await play_curse_vfx()
 	#GameEvents.on_game_over.emit()
 	print('HIT CRACKS - GAME OVER')
@@ -105,7 +105,7 @@ func _on_crack_gameover():
 func _on_ladder_gameover():
 	if game_over:
 		return
-	GameEvents.game_over_reason = "YOU LOST A LOT OF LUCK AND DIED"
+	GameEvents.game_over_reason = "YOU WENT UNDER A LADDER"
 	await play_curse_vfx()
 	#GameEvents.on_game_over.emit()
 	print('PASSED UNDER A LADDER - LUCK LOSS')
@@ -121,6 +121,7 @@ func play_curse_vfx():
 	velocity = Vector3.ZERO
 	game_over = true
 	$CurseVfx.emitting = true
+	$DeathSFX.play()
 	anim_player.play("Death")
 	GameEvents.stop_game()
 	await $CurseVfx.finished
