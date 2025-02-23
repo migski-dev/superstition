@@ -1,0 +1,171 @@
+[gd_scene load_steps=21 format=3 uid="uid://tmryufmhuh1q"]
+
+[ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_07qxj"]
+[ext_resource type="Texture2D" uid="uid://cbxdpxsrl10on" path="res://assets/materials/Tile/Tile_03-128x128.png" id="2_onafs"]
+[ext_resource type="PackedScene" uid="uid://b1li5by3nofy3" path="res://assets/lowpoly_assets/Models/interior assets/Pieces/railing.fbx" id="3_gm1tp"]
+[ext_resource type="Texture2D" uid="uid://brfw4m4rdpit0" path="res://assets/lowpoly_assets/Texture/Marmol.png" id="4_uhdtj"]
+[ext_resource type="PackedScene" uid="uid://c68q6do3jgx3y" path="res://scenes/game_objects/npc_spawner/npc_spawner.tscn" id="5_3fji1"]
+[ext_resource type="PackedScene" uid="uid://dbcoh3bpx386k" path="res://scenes/game_objects/npc/npc.tscn" id="6_tq3nf"]
+[ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="7_qspnr"]
+[ext_resource type="PackedScene" uid="uid://cw75t287s5qit" path="res://scenes/game_objects/ladder/ladder.tscn" id="9_q5jwr"]
+[ext_resource type="Texture2D" uid="uid://b2n34ixxrblhg" path="res://assets/materials/Plaster/Plaster_20-128x128.png" id="10_1kikm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f03k6"]
+albedo_texture = ExtResource("2_onafs")
+uv1_scale = Vector3(9, 20, 1)
+
+[sub_resource type="Gradient" id="Gradient_i655i"]
+offsets = PackedFloat32Array(0, 0.992424, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0643939, 0.0643939, 0.0643939, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qox21"]
+seed = 45645456
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b582l"]
+color_ramp = SubResource("Gradient_i655i")
+noise = SubResource("FastNoiseLite_qox21")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4eto"]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.549, 0.758, 0.836, 0.335)
+roughness_texture = SubResource("NoiseTexture2D_b582l")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3r43y"]
+material = SubResource("StandardMaterial3D_g4eto")
+size = Vector2(2, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h6mv"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("4_uhdtj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xllp5"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("10_1kikm")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogcvy"]
+albedo_texture = ExtResource("7_qspnr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_88nks"]
+material = SubResource("StandardMaterial3D_ogcvy")
+size = Vector2(8, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqcvr"]
+albedo_texture = ExtResource("2_onafs")
+uv1_scale = Vector3(4, 9, 1)
+
+[node name="Market_Cafe" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000977516, 0.00880408, 0.000139236)
+script = ExtResource("1_07qxj")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.002)
+use_collision = true
+collision_mask = 8
+size = Vector3(21.877, 1, 6)
+material = SubResource("StandardMaterial3D_f03k6")
+
+[node name="railing" parent="." instance=ExtResource("3_gm1tp")]
+transform = Transform3D(-5.46392e-08, 0, 1, 0, 1, 0, -1.25, 0, -4.37114e-08, 13.3053, 2.43799, 12.0305)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="railing"]
+transform = Transform3D(2.38836e-15, -4.37114e-08, 1, -1.25, -4.37114e-08, 3.59989e-21, 5.46392e-08, -1, -4.37114e-08, 10.0097, 1.34079, -5.24504)
+transparency = 0.85
+mesh = SubResource("PlaneMesh_3r43y")
+skeleton = NodePath("../..")
+
+[node name="Left Wall2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97167, 2.45312, 2.47627)
+cast_shadow = 0
+use_collision = true
+radius = 0.6
+height = 4.0
+material = SubResource("StandardMaterial3D_3h6mv")
+
+[node name="NpcSpawner" parent="." instance=ExtResource("5_3fji1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.364, 0.5, -0.572536)
+npc_type_array = Array[PackedScene]([ExtResource("6_tq3nf")])
+
+[node name="NpcSpawner2" parent="." instance=ExtResource("5_3fji1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.364, 0.5, 0.808285)
+npc_type_array = Array[PackedScene]([ExtResource("6_tq3nf")])
+
+[node name="NpcSpawner3" parent="." instance=ExtResource("5_3fji1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.364, 0.5, -1.66928)
+npc_type_array = Array[PackedScene]([ExtResource("6_tq3nf")])
+
+[node name="Left Wall4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01045, 2.45312, 2.47627)
+cast_shadow = 0
+use_collision = true
+radius = 0.6
+height = 4.0
+material = SubResource("StandardMaterial3D_3h6mv")
+
+[node name="NpcSpawner5" parent="." instance=ExtResource("5_3fji1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5304, 0.5, 1.81803)
+npc_type_array = Array[PackedScene]([ExtResource("6_tq3nf")])
+
+[node name="NpcSpawner6" parent="." instance=ExtResource("5_3fji1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5304, 0.5, -0.659531)
+npc_type_array = Array[PackedScene]([ExtResource("6_tq3nf")])
+
+[node name="Left Wall6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60233, 1.98875, 2.74764)
+cast_shadow = 0
+use_collision = true
+size = Vector3(3.6851, 5.23941, 0.470924)
+material = SubResource("StandardMaterial3D_xllp5")
+
+[node name="Left Wall7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.54869, 1.98875, 2.74764)
+cast_shadow = 0
+use_collision = true
+size = Vector3(3.6851, 5.23941, 0.470924)
+material = SubResource("StandardMaterial3D_xllp5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -14.9355, 2.19489, -2.98677)
+mesh = SubResource("PlaneMesh_88nks")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -15.3424, 2.19489, 0.686366)
+mesh = SubResource("PlaneMesh_88nks")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.000122114, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -0.000122114, 5.33777e-12, 15.6542, 2.19489, -0.834888)
+mesh = SubResource("PlaneMesh_88nks")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -0.00012207, 5.33586e-12, 0, -4.37114e-08, -1, 0.00012207, 1, -4.37114e-08, 14.7424, 2.19489, -2.95639)
+mesh = SubResource("PlaneMesh_88nks")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -12.7485, -0.527342, 0.00435682)
+size = Vector3(4.79633, 5.95661, 2.0309)
+material = SubResource("StandardMaterial3D_cqcvr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 13.2627, -0.519034, -0.313662)
+size = Vector3(4.79633, 5.95661, 2.0309)
+material = SubResource("StandardMaterial3D_cqcvr")
+
+[node name="Ladder" parent="." instance=ExtResource("9_q5jwr")]
+transform = Transform3D(1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, 4.7008, 2.75958, 2.12137)
+
+[node name="Ladder2" parent="." instance=ExtResource("9_q5jwr")]
+transform = Transform3D(1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, 1.41421, -3.11293, 2.75958, 2.12137)
+
+[node name="Ladder3" parent="." instance=ExtResource("9_q5jwr")]
+transform = Transform3D(1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, 4.7008, 2.75958, -2.26587)
+
+[node name="Ladder4" parent="." instance=ExtResource("9_q5jwr")]
+transform = Transform3D(1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, 1.41421, -3.11293, 2.75958, -2.26587)

@@ -1,0 +1,107 @@
+[gd_scene load_steps=21 format=3 uid="uid://b231sjiprpvoh"]
+
+[ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_ubpjj"]
+[ext_resource type="PackedScene" uid="uid://c6nabmb6gcowh" path="res://assets/lowpoly_assets/Models/Furniture/table_round.glb" id="3_y2qf1"]
+[ext_resource type="PackedScene" uid="uid://bpa6jfwv3r1p2" path="res://assets/lowpoly_assets/Models/Furniture/cup.glb" id="4_14axe"]
+[ext_resource type="Texture2D" uid="uid://cbxdpxsrl10on" path="res://assets/materials/Tile/Tile_03-128x128.png" id="4_bfw6a"]
+[ext_resource type="PackedScene" uid="uid://durkt143j0ck4" path="res://assets/lowpoly_assets/Models/Furniture/bowl.glb" id="5_xhqu5"]
+[ext_resource type="PackedScene" uid="uid://bhicqeior44r5" path="res://assets/lowpoly_assets/Models/Furniture/fan_light.glb" id="6_700hk"]
+[ext_resource type="PackedScene" uid="uid://dbymi5jcfo6lf" path="res://assets/lowpoly_assets/Models/Furniture/chair.glb" id="9_ybt1h"]
+[ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="10_a464j"]
+[ext_resource type="Texture2D" uid="uid://dhuq880l0njs2" path="res://assets/materials/Stone/Stone_10-128x128.png" id="11_7do2e"]
+[ext_resource type="PackedScene" uid="uid://d2v58u21eygnn" path="res://assets/lowpoly_assets/Models/coolers_and_drinks/small_alcohol_cooler.glb" id="11_xg38y"]
+[ext_resource type="PackedScene" uid="uid://b0aaxvqwir740" path="res://scenes/game_objects/cracks/cracks.tscn" id="12_jgpwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f03k6"]
+albedo_texture = ExtResource("4_bfw6a")
+uv1_scale = Vector3(9, 20, 1)
+
+[sub_resource type="Gradient" id="Gradient_b730o"]
+offsets = PackedFloat32Array(0, 0.992424, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0643939, 0.0643939, 0.0643939, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rkjh3"]
+seed = 45645456
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_onusx"]
+color_ramp = SubResource("Gradient_b730o")
+noise = SubResource("FastNoiseLite_rkjh3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7w0y8"]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.549, 0.758, 0.836, 0.335)
+roughness_texture = SubResource("NoiseTexture2D_onusx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7x6sl"]
+material = SubResource("StandardMaterial3D_7w0y8")
+size = Vector2(3, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfn76"]
+albedo_texture = ExtResource("11_7do2e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pay1w"]
+albedo_texture = ExtResource("10_a464j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_50vvy"]
+material = SubResource("StandardMaterial3D_pay1w")
+size = Vector2(8, 4)
+
+[node name="Market_Cafe" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000977516, 0.00880408, 0.000139236)
+script = ExtResource("1_ubpjj")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+collision_mask = 8
+size = Vector3(21.877, 1, 6)
+material = SubResource("StandardMaterial3D_f03k6")
+
+[node name="table_round" parent="." instance=ExtResource("3_y2qf1")]
+transform = Transform3D(-2.84124e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.84124e-08, 6.88095, 1.51541, 1.3042)
+
+[node name="cup" parent="." instance=ExtResource("4_14axe")]
+transform = Transform3D(-0.93358, 0, 0.358368, 0, 1, 0, -0.358368, 0, -0.93358, 6.15601, 1.75101, 1.9732)
+
+[node name="cup2" parent="." instance=ExtResource("4_14axe")]
+transform = Transform3D(0.597625, 0, -0.801776, 0, 1, 0, 0.801776, 0, 0.597625, 7.72251, 1.73563, 0.994898)
+
+[node name="bowl" parent="." instance=ExtResource("5_xhqu5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.53152, 1.73352, 2.42496)
+
+[node name="bowl2" parent="." instance=ExtResource("5_xhqu5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.13512, 1.73352, 0.461656)
+
+[node name="fan_light" parent="." instance=ExtResource("6_700hk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.83267, 3.25674, 1.37571)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 9.998, 2.771, 0.065)
+transparency = 0.85
+mesh = SubResource("PlaneMesh_7x6sl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80184, 0.83156, 0.0198514)
+size = Vector3(1, 1.45593, 6.07083)
+material = SubResource("StandardMaterial3D_mfn76")
+
+[node name="chair" parent="." instance=ExtResource("9_ybt1h")]
+transform = Transform3D(0.508695, 0, -0.404635, 0, 0.65, 0, 0.404635, 0, 0.508695, 6.06938, 1.0665, 2.23944)
+
+[node name="chair2" parent="." instance=ExtResource("9_ybt1h")]
+transform = Transform3D(-0.422141, 0, 0.494264, 0, 0.65, 0, -0.494264, 0, -0.422141, 7.73021, 1.0665, 0.427398)
+
+[node name="small_alcohol_cooler" parent="." instance=ExtResource("11_xg38y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.4906, 1.17215, -2.43264)
+
+[node name="small_alcohol_cooler2" parent="." instance=ExtResource("11_xg38y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.4906, 1.17215, -1.50347)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 12.1913, 2.19489, -5.32949e-07)
+mesh = SubResource("PlaneMesh_50vvy")
+
+[node name="Cracks" parent="." instance=ExtResource("12_jgpwn")]
+transform = Transform3D(0.49382, 0, 0.869564, 0, 1, 0, -0.869564, 0, 0.49382, 0.582632, 0.792627, -0.63596)

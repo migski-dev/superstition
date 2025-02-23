@@ -14,7 +14,6 @@ var init_obs = 0
 func _ready() -> void:
 	for n in amount:
 		spawn_module(n*offset)
-		#spawn_module()
 
 func spawn_module(n: float) -> void:
 	if init_obs > 2:
@@ -49,7 +48,3 @@ func spawn_module(n: float) -> void:
 		add_child(instance)
 		
 		init_obs += 1
-	
-	GameEvents.head_position += GameEvents.module_offset
-	
-	

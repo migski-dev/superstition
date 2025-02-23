@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgskqj1w4xpw7"]
+
+[ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_0jctt"]
+[ext_resource type="Texture2D" uid="uid://b2n34ixxrblhg" path="res://assets/materials/Plaster/Plaster_20-128x128.png" id="2_66xci"]
+[ext_resource type="Texture2D" uid="uid://dfq0lxgluct33" path="res://assets/materials/Tile/Tile_15-128x128.png" id="3_rugm8"]
+[ext_resource type="PackedScene" uid="uid://b3ien6lkbsjwf" path="res://assets/lowpoly_assets/Models/metro_bench/metro_bench.glb" id="4_y5ojt"]
+[ext_resource type="PackedScene" uid="uid://blvjek5wmtk3q" path="res://assets/lowpoly_assets/Models/metro_map/metro_map.glb" id="5_pfqen"]
+[ext_resource type="PackedScene" uid="uid://d0wmtefbywetu" path="res://assets/lowpoly_assets/Models/metro_trashcan/metro_trashcan.glb" id="6_44hu1"]
+[ext_resource type="PackedScene" uid="uid://b0aaxvqwir740" path="res://scenes/game_objects/cracks/cracks.tscn" id="7_xd7b6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_krwus"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_66xci")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoguk"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_66xci")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjrx1"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("3_rugm8")
+emission = Color(0.255659, 0.255659, 0.255659, 1)
+subsurf_scatter_strength = 0.5
+subsurf_scatter_transmittance_enabled = true
+uv1_scale = Vector3(10, 40, 10)
+uv1_triplanar_sharpness = 14.4199
+texture_filter = 4
+
+[node name="start_module" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_0jctt")
+
+[node name="Right Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0006, 1.71946, 0.0149471)
+cast_shadow = 0
+size = Vector3(1, 4.60986, 6.065)
+material = SubResource("StandardMaterial3D_krwus")
+
+[node name="Left Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1573, 1.58511, 0.00794793)
+cast_shadow = 0
+use_collision = true
+size = Vector3(0.920898, 4.05774, 6.065)
+material = SubResource("StandardMaterial3D_uoguk")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+collision_mask = 8
+size = Vector3(21.877, 1, 6)
+material = SubResource("StandardMaterial3D_qjrx1")
+
+[node name="metro_bench" parent="." instance=ExtResource("4_y5ojt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.642, 1, -1.80845)
+
+[node name="metro_bench2" parent="." instance=ExtResource("4_y5ojt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.642, 1, 1.73628)
+
+[node name="metro_map2" parent="." instance=ExtResource("5_pfqen")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4514, 2.54383, -0.0493889)
+
+[node name="metro_bench3" parent="." instance=ExtResource("4_y5ojt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.4177, 1, -1.80845)
+
+[node name="metro_bench4" parent="." instance=ExtResource("4_y5ojt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.4177, 1, 1.67444)
+
+[node name="metro_map3" parent="." instance=ExtResource("5_pfqen")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.6511, 2.29675, -0.0618111)
+
+[node name="metro_trashcan" parent="." instance=ExtResource("6_44hu1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.56308, 1.02607, -0.0257989)
+
+[node name="metro_trashcan2" parent="." instance=ExtResource("6_44hu1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.81137, 1.00664, -0.0144639)
+
+[node name="Cracks" parent="." instance=ExtResource("7_xd7b6")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -2.08082, 0.77003, -1.89463)
+
+[node name="Cracks2" parent="." instance=ExtResource("7_xd7b6")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4.04164, 0.77003, -1.89463)

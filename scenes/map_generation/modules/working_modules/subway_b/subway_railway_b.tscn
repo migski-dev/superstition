@@ -1,0 +1,177 @@
+[gd_scene load_steps=28 format=3 uid="uid://c4e75mm6iavw4"]
+
+[ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_opmej"]
+[ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="2_tnum5"]
+[ext_resource type="PackedScene" uid="uid://c68q6do3jgx3y" path="res://scenes/game_objects/npc_spawner/npc_spawner.tscn" id="3_w02kl"]
+[ext_resource type="Texture2D" uid="uid://b2n34ixxrblhg" path="res://assets/materials/Plaster/Plaster_20-128x128.png" id="4_lnfas"]
+[ext_resource type="Texture2D" uid="uid://c3hia0xegttu0" path="res://assets/materials/Metal/Metal_06-128x128.png" id="5_isyo3"]
+[ext_resource type="Texture2D" uid="uid://hdtnodhaq0cn" path="res://assets/materials/Metal/Metal_03-128x128.png" id="6_fj4h2"]
+[ext_resource type="PackedScene" uid="uid://cqqp4bkg1vds3" path="res://assets/lowpoly_assets/Models/interior assets/Pieces/pillar4.fbx" id="7_1r0rm"]
+[ext_resource type="Texture2D" uid="uid://dfq0lxgluct33" path="res://assets/materials/Tile/Tile_15-128x128.png" id="7_s35lb"]
+[ext_resource type="Texture2D" uid="uid://cjllw4g3s238" path="res://assets/lowpoly_assets/Models/Furniture/fan_light_Metal_15.jpg" id="9_bwcux"]
+[ext_resource type="Texture2D" uid="uid://be4c03oyocq6n" path="res://assets/materials/Brick/Brick_20-128x128.png" id="9_hkenj"]
+[ext_resource type="PackedScene" uid="uid://dplqg7kkqu5v3" path="res://assets/lowpoly_assets/Models/metro_gate/metro_gate.glb" id="10_vyu88"]
+[ext_resource type="PackedScene" uid="uid://bedc85ts5ywwe" path="res://assets/lowpoly_assets/Models/metro_posters/metro_poster2.glb" id="12_mhipu"]
+[ext_resource type="PackedScene" uid="uid://dr4dppadmlprj" path="res://assets/lowpoly_assets/Models/metro_posters/metro_poster4.glb" id="13_odccu"]
+[ext_resource type="PackedScene" uid="uid://cw75t287s5qit" path="res://scenes/game_objects/ladder/ladder.tscn" id="14_od3t1"]
+[ext_resource type="PackedScene" uid="uid://b0aaxvqwir740" path="res://scenes/game_objects/cracks/cracks.tscn" id="15_ltkbd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_typav"]
+albedo_texture = ExtResource("2_tnum5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67r5p"]
+albedo_texture = ExtResource("2_tnum5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxqy1"]
+albedo_texture = ExtResource("2_tnum5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgu0b"]
+albedo_texture = ExtResource("5_isyo3")
+uv1_scale = Vector3(20, 40, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sivpp"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("4_lnfas")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k40ua"]
+albedo_texture = ExtResource("6_fj4h2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hgpx"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("7_s35lb")
+emission = Color(0.255659, 0.255659, 0.255659, 1)
+subsurf_scatter_strength = 0.5
+subsurf_scatter_transmittance_enabled = true
+uv1_scale = Vector3(10, 40, 10)
+uv1_triplanar_sharpness = 14.4199
+texture_filter = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rr73"]
+albedo_texture = ExtResource("9_bwcux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urk5g"]
+albedo_texture = ExtResource("9_hkenj")
+uv1_scale = Vector3(6, 6, 6)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xu41f"]
+material = SubResource("StandardMaterial3D_urk5g")
+size = Vector2(6, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3nna"]
+albedo_texture = ExtResource("9_bwcux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ufgh"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("7_s35lb")
+emission = Color(0.255659, 0.255659, 0.255659, 1)
+subsurf_scatter_strength = 0.5
+subsurf_scatter_transmittance_enabled = true
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar_sharpness = 14.4199
+texture_filter = 4
+
+[node name="Pole_Module_Subway_Train" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000977516, 0.00880408, 0.000139236)
+script = ExtResource("1_opmej")
+
+[node name="pillar5" parent="." instance=ExtResource("7_1r0rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5059, 0.498196, 1.56392)
+
+[node name="pillar4" parent="." instance=ExtResource("7_1r0rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5059, 0.498196, -1.53694)
+
+[node name="Pole2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1449, 2.55343, -1.99607)
+layers = 2
+use_collision = true
+collision_layer = 2
+size = Vector3(0.271973, 4.07031, 0.331543)
+material = SubResource("StandardMaterial3D_typav")
+
+[node name="Pole3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64061, 2.5, 2)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.271973, 4.07031, 0.331543)
+material = SubResource("StandardMaterial3D_67r5p")
+
+[node name="Pole4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170263, 2.5168, -0.0247793)
+layers = 2
+use_collision = true
+collision_layer = 2
+size = Vector3(0.5, 4.07, 0.5)
+material = SubResource("StandardMaterial3D_lxqy1")
+
+[node name="NpcSpawner2" parent="." instance=ExtResource("3_w02kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4332, 0.5, -1.18444)
+right_side = false
+
+[node name="Backwall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4943, 1.9985, -0.0117643)
+material_override = SubResource("StandardMaterial3D_pgu0b")
+cast_shadow = 0
+size = Vector3(1, 3, 6.065)
+material = SubResource("StandardMaterial3D_sivpp")
+
+[node name="RailFloor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7331, -0.00360752, -0.00423027)
+use_collision = true
+collision_mask = 8
+size = Vector3(4, 1, 6)
+material = SubResource("StandardMaterial3D_k40ua")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56405e-08, 0, 0.586726)
+
+[node name="Decal" type="Decal" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894592, 0)
+size = Vector3(2, 3.78918, 2)
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+collision_mask = 8
+size = Vector3(21.877, 1, 6)
+material = SubResource("StandardMaterial3D_5hgpx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13.487, 2.19489, 0.755558)
+material_override = SubResource("StandardMaterial3D_4rr73")
+mesh = SubResource("PlaneMesh_xu41f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13.487, 2.19489, -2.41901)
+material_override = SubResource("StandardMaterial3D_x3nna")
+mesh = SubResource("PlaneMesh_xu41f")
+
+[node name="Floor2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4357, -0.00180376, -0.00211477)
+use_collision = true
+collision_mask = 8
+size = Vector3(6.02027, 1, 6)
+material = SubResource("StandardMaterial3D_5ufgh")
+
+[node name="metro_gate" parent="." instance=ExtResource("10_vyu88")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2295, 0.498196, 2.58008)
+
+[node name="metro_gate2" parent="." instance=ExtResource("10_vyu88")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2295, 0.498196, -0.269248)
+
+[node name="metro_poster2" parent="." instance=ExtResource("12_mhipu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.6045, 2.45544, 0.787411)
+
+[node name="metro_poster4" parent="." instance=ExtResource("13_odccu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.6045, 2.45544, -2.39193)
+
+[node name="Ladder" parent="." instance=ExtResource("14_od3t1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.895145, 2.60803, -2.29038)
+
+[node name="Cracks" parent="." instance=ExtResource("15_ltkbd")]
+transform = Transform3D(0.587785, 0, 0.809017, 0, 1, 0, -0.809017, 0, 0.587785, 1.1009, 0.77426, -2.2143)
