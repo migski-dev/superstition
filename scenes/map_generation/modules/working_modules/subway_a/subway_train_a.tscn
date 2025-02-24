@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c161mm8bx3ma"]
+[gd_scene load_steps=22 format=3 uid="uid://c161mm8bx3mA"]
 
 [ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_xice0"]
 [ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="2_bgwfw"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2n34ixxrblhg" path="res://assets/materials/Plaster/Plaster_20-128x128.png" id="4_kyuqv"]
 [ext_resource type="Texture2D" uid="uid://hdtnodhaq0cn" path="res://assets/materials/Metal/Metal_03-128x128.png" id="6_xk04d"]
 [ext_resource type="Texture2D" uid="uid://dfq0lxgluct33" path="res://assets/materials/Tile/Tile_15-128x128.png" id="7_u2o62"]
-[ext_resource type="PackedScene" uid="uid://rucv18y7it4d" path="res://assets/lowpoly_assets/Models/metro_train/metro_train.glb" id="8_g2tox"]
+[ext_resource type="PackedScene" uid="uid://dssopssmp1e4x" path="res://assets/lowpoly_assets/Models/metro_train/metro_train.glb" id="8_g2tox"]
 [ext_resource type="PackedScene" uid="uid://dr4dppadmlprj" path="res://assets/lowpoly_assets/Models/metro_posters/metro_poster4.glb" id="9_1xeqj"]
 [ext_resource type="PackedScene" uid="uid://b3ien6lkbsjwf" path="res://assets/lowpoly_assets/Models/metro_bench/metro_bench.glb" id="10_6qed5"]
 [ext_resource type="PackedScene" uid="uid://cw75t287s5qit" path="res://scenes/game_objects/ladder/ladder.tscn" id="11_1x2h1"]

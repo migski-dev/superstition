@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="10_03riq"]
 [ext_resource type="PackedScene" uid="uid://d2v58u21eygnn" path="res://assets/lowpoly_assets/Models/coolers_and_drinks/small_alcohol_cooler.glb" id="11_3trf2"]
 [ext_resource type="Texture2D" uid="uid://b1sr37ai8agyo" path="res://assets/materials/Brick/Brick_16-128x128.png" id="12_ipy0e"]
-[ext_resource type="PackedScene" uid="uid://daw1fv63donmk" path="res://assets/lowpoly_assets/Models/TVs/TV1/Tv1.glb" id="13_73fsf"]
+[ext_resource type="PackedScene" uid="uid://dd1hxxqr4vg3s" path="res://assets/lowpoly_assets/Models/TVs/TV1/Tv1.glb" id="13_73fsf"]
 [ext_resource type="PackedScene" uid="uid://vhlanvg6cglo" path="res://assets/lowpoly_assets/Models/TVs/TV2/Tv2.glb" id="14_p40dx"]
 [ext_resource type="PackedScene" uid="uid://cu6o5i1bmy7a4" path="res://assets/lowpoly_assets/Models/Furniture/display.glb" id="15_2i7db"]
 [ext_resource type="Texture2D" uid="uid://wwji273jm15y" path="res://assets/materials/Plaster/Plaster_12-128x128.png" id="16_se1m2"]

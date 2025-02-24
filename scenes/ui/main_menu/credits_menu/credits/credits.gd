@@ -41,6 +41,23 @@ signal end_reached
 @export var keywords: Dictionary = {"Credits": "MENU_LABEL_CREDITS"}
 ## Contain suffix in file and in translation.
 @export var suffix_keywords: Dictionary = {}
+@onready var credit_string: String = "## Team
+
+- Miguel Villanueva - Programming/ 3D Artist
+- Ian McDowell - Programming/ Level Design
+- Trenton Talley - Music Composer
+- Giulian Groce - 2D Artist
+
+## Models
+
+Ladder by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/2miFomy5qis)
+cat Rigged by Vr-cvantorium [CC-BY] (https://creativecommons.org/licenses/by/4.0/) via Sketchfab (https://sketchfab.com/3d-models/cat-rigged-eccebebd5a60484eaa49036f8a4b6ed7)
+
+## Code Snippets
+Game Jam Template - TinyTakinTeller
+Outline Shader - https://godotshaders.com/shader/high-quality-post-process-outline/
+"
+
 
 var scroll_paused: bool = false:
 	set(value):
@@ -130,7 +147,8 @@ func _set_header_and_footer() -> void:
 
 
 func _update_text_from_file() -> void:
-	var text: String = FileSystemUtils.load_file_as_string(attribution_file_path)
+	#var text: String = FileSystemUtils.load_file_as_string(attribution_file_path)
+	var text: String = credit_string
 	if text == "":
 		return
 

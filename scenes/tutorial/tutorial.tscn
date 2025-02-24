@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dboffmh6qy04g"]
+
+[ext_resource type="PackedScene" uid="uid://bgskqj1w4xpw7" path="res://scenes/map_generation/modules/working_modules/subway_a/subway_start_a.tscn" id="1_0p1ob"]
+
+[node name="Tutorial" type="Node3D"]
+
+[node name="start_module" parent="." instance=ExtResource("1_0p1ob")]
+
+[node name="Right Wall" parent="start_module" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0006, 1.71946, 1.94689)
+size = Vector3(1, 4.60986, 13.8695)
+
+[node name="Floor" parent="start_module" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00430155, 0.00897312, 1.98624)
+size = Vector3(21.877, 1, 14.1455)
+
+[editable path="start_module"]

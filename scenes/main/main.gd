@@ -1,6 +1,5 @@
 extends Node3D
 
-@onready var game_over_ui = $GameOverLayer
 @onready var meme_layer:CanvasLayer = $MemeLayer
 @onready var viewport:Viewport = get_viewport()
 @onready var game_size: Vector2 = Vector2(ProjectSettings.get_setting('display/window/size/viewport_width'), ProjectSettings.get_setting('display/window/size/viewport_height'))
@@ -9,8 +8,9 @@ var test: Array
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	viewport.size_changed.connect(_center_game)
-	game_over_ui.visible = false
+	#game_over_ui.visible = false
 	meme_layer.visible = false
+
 	GameEvents.connect("on_game_over", _on_game_over)
 	GameEvents.sister = $Sister
 	GameEvents.player = $Player

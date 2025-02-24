@@ -43,6 +43,7 @@ theme_override_constants/margin_bottom = 8
 [node name="Credits" parent="RootMarginContainer/VBoxContainer/CreditsMarginContainer" instance=ExtResource("3_b3gxy")]
 unique_name_in_owner = true
 layout_mode = 2
+attribution_file_path = "res://Credits.md"
 
 [node name="FooterHSeparator" type="HSeparator" parent="RootMarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -63,7 +64,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "       Back       "
 id = 11
-label = "MENU_LABEL_BACK"
+label = "Back"
 
 [node name="MarginContainer" type="MarginContainer" parent="RootMarginContainer/VBoxContainer/FooterMarginContainer/HBoxContainer"]
 layout_mode = 2

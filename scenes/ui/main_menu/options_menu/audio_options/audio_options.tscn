@@ -26,6 +26,9 @@ id = 1
 [node name="LabelLabel" parent="RootVBoxContainer/MasterMenuSlider/HBoxContainer/LabelMarginContainer/LabelHBoxContainer" index="0"]
 text = "Master"
 
+[node name="HSlider" parent="RootVBoxContainer/MasterMenuSlider/HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer" index="0"]
+value = 100.0
+
 [node name="MusicMenuSlider" parent="RootVBoxContainer" instance=ExtResource("3_o7sdi")]
 unique_name_in_owner = true
 layout_mode = 2
@@ -35,6 +38,9 @@ label = "MENU_LABEL_MUSIC"
 [node name="LabelLabel" parent="RootVBoxContainer/MusicMenuSlider/HBoxContainer/LabelMarginContainer/LabelHBoxContainer" index="0"]
 text = "Music"
 
+[node name="HSlider" parent="RootVBoxContainer/MusicMenuSlider/HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer" index="0"]
+value = 100.0
+
 [node name="SFXMenuSlider" parent="RootVBoxContainer" instance=ExtResource("3_o7sdi")]
 unique_name_in_owner = true
 layout_mode = 2
@@ -43,6 +49,9 @@ label = "MENU_LABEL_EFFECTS"
 
 [node name="LabelLabel" parent="RootVBoxContainer/SFXMenuSlider/HBoxContainer/LabelMarginContainer/LabelHBoxContainer" index="0"]
 text = "Effects"
+
+[node name="HSlider" parent="RootVBoxContainer/SFXMenuSlider/HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer" index="0"]
+value = 100.0
 
 [node name="AudioMenuToggle" parent="RootVBoxContainer" instance=ExtResource("4_wpfi7")]
 unique_name_in_owner = true

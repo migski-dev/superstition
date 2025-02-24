@@ -79,6 +79,15 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="HSlider" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/MasterMenuSlider/HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer" index="0"]
+value = 0.0
+
+[node name="HSlider" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/MusicMenuSlider/HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer" index="0"]
+value = 0.0
+
+[node name="HSlider" parent="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/SFXMenuSlider/HBoxContainer/SliderMarginContainer/SliderVBoxContainer/SliderMarginContainer" index="0"]
+value = 0.0
+
 [node name="FooterHSeparator" type="HSeparator" parent="RootMarginContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -113,3 +122,9 @@ theme_override_font_sizes/font_size = 24
 text = "       Reset       "
 id = 6
 label = "Reset"
+
+[editable path="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions"]
+[editable path="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/MasterMenuSlider"]
+[editable path="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/MusicMenuSlider"]
+[editable path="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/SFXMenuSlider"]
+[editable path="RootMarginContainer/VBoxContainer/OptionsMarginContainer/OptionsVBoxContainer/AudioOptions/RootVBoxContainer/AudioMenuToggle"]

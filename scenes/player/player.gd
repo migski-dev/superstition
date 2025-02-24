@@ -55,7 +55,9 @@ func _physics_process(delta):
 	
 	
 func check_collisions():
-	for i in range(get_slide_collision_count()):
+	if game_over:
+		return
+	for i in range(get_slide_collision_count()-1):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
@@ -64,8 +66,9 @@ func check_collisions():
 				if game_over:
 					return
 				var cat = collider as BlackCat
+				game_over = true
 				cat.speed = 0
-				GameEvents.game_over_reason = "YOU CROSSED PATH WITH A BLACK CAT"
+				GameEvents.game_over_reason = "YOU CROSSED PATHS WITH A BLACK CAT"
 				GameEvents.on_black_cat.emit()
 				await play_curse_vfx()
 				GameEvents.on_game_over.emit()

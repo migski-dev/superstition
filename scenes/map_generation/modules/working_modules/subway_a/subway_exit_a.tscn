@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bv7a823bq6jgm"]
+[gd_scene load_steps=22 format=3 uid="uid://cusg8bmopkclj"]
 
 [ext_resource type="Script" path="res://scenes/map_generation/modules/_module.gd" id="1_asqew"]
 [ext_resource type="Texture2D" uid="uid://p2qer8o4o5dn" path="res://assets/materials/Stone/Stone_11-128x128.png" id="2_5ae75"]

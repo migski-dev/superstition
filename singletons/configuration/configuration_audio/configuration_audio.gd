@@ -78,9 +78,9 @@ func _set_audio_server_audio_enabled(enabled: bool, bus_index: int) -> void:
 
 
 func _load_audio_server() -> void:
-	var master_volume: float = 50 #ConfigStorageSettingsAudio.get_master_volume()
-	var music_volume: float = 50 #ConfigStorageSettingsAudio.get_music_volume()
-	var sfx_volume: float = 50 #ConfigStorageSettingsAudio.get_sfx_volume()
+	var master_volume: float = 100 #ConfigStorageSettingsAudio.get_master_volume()
+	var music_volume: float = 100 #ConfigStorageSettingsAudio.get_music_volume()
+	var sfx_volume: float = 100 #ConfigStorageSettingsAudio.get_sfx_volume()
 	var audio_enabled: bool = true #ConfigStorageSettingsAudio.get_audio_enabled()
 
 	AudioServer.set_bus_volume_db(audio_bus_master_index, linear_to_db(master_volume / 100))

@@ -9,9 +9,10 @@ var offset: float = 6.0 # How far each module is
 
 var init_obs = 0
 
-@export var level_segments: Array[LevelSegment] = []
+@export var level_segments1: Array[LevelSegment] = []
 
 func _ready() -> void:
+	print(level_segments1)
 	for n in amount:
 		spawn_module(n*offset)
 
@@ -26,14 +27,14 @@ func spawn_module(n: float) -> void:
 		
 		#TEST BEHAVIOR - BATCHED MODULES
 		rng.randomize()
-		var num = rng.randi_range(0,level_segments.size()-1)
-		var position : int = 0
+		var num = rng.randi_range(0,level_segments1.size()-1)
+		var position2 : int = 0
 		
 		print(num)
-		if module_queue.size() + level_segments[num].scenes.size() <= amount:
-			for seg in level_segments[num].scenes:
-				position += 1
-				print(level_segments[num].name + " " + str(position))
+		if module_queue.size() + level_segments1[num].scenes.size() <= amount:
+			for seg in level_segments1[num].scenes:
+				position2 += 1
+				print(level_segments1[num].name + " " + str(position2))
 				module_queue.append(seg)
 			
 		var instance:Node3D = module_queue.pop_front().instantiate()

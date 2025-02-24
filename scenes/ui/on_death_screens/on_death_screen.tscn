@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://drq4bukm47wl6"]
+[gd_scene load_steps=10 format=3 uid="uid://drq4bukm47wl6"]
 
 [ext_resource type="Script" path="res://scenes/ui/on_death_screens/on_death_screen.gd" id="1_63ore"]
 [ext_resource type="Texture2D" uid="uid://b1fus7fsrb572" path="res://assets/memes/death_splash_pole.png" id="1_moh82"]
 [ext_resource type="Theme" uid="uid://cgrx211pduhvq" path="res://resource/theme/theme.tres" id="2_vba2p"]
 [ext_resource type="Texture2D" uid="uid://c64bpr50fndjs" path="res://assets/memes/death_splash_cat.png" id="3_wddxm"]
 [ext_resource type="Texture2D" uid="uid://iilh48y25510" path="res://assets/memes/death_splash_crack.png" id="4_3k08b"]
+[ext_resource type="Texture2D" uid="uid://b5b7r5c45u864" path="res://assets/memes/death_splash_sister.png" id="6_043r2"]
 [ext_resource type="Texture2D" uid="uid://dxxfj43041hc3" path="res://assets/memes/death_splash_ladder.png" id="6_rn7vs"]
 [ext_resource type="PackedScene" uid="uid://bv7d4vxqjocks" path="res://component/control/control_grab_focus/control_grab_focus.tscn" id="7_t3o0u"]
 
@@ -28,12 +29,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch_mode = 0
 alignment_horizontal = 0
 alignment_vertical = 0
 
 [node name="ColorRect" type="ColorRect" parent="AspectRatioContainer"]
 z_index = -4096
-custom_minimum_size = Vector2(1152, 0)
+custom_minimum_size = Vector2(1152, 648)
 layout_mode = 2
 color = Color(0.768627, 0.603922, 0.717647, 1)
 
@@ -41,16 +43,16 @@ color = Color(0.768627, 0.603922, 0.717647, 1)
 custom_minimum_size = Vector2(1152, 648)
 layout_direction = 2
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 0
-alignment = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="AspectRatioContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
 
 [node name="DeathSplashCat" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_wddxm")
@@ -59,7 +61,6 @@ stretch_mode = 4
 
 [node name="DeathSplashPole" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 texture = ExtResource("1_moh82")
 expand_mode = 1
@@ -81,18 +82,33 @@ texture = ExtResource("4_3k08b")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="DeathSplashSister" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("6_043r2")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 60
+theme_override_constants/margin_bottom = 120
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_constants/separation = 30
 alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_in2yd")
 
 [node name="GameOverLabel" type="Label" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -122,7 +138,7 @@ autowrap_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 305
+theme_override_constants/separation = 210
 theme_override_styles/separator = SubResource("StyleBoxEmpty_in2yd")
 
 [node name="Button" type="Button" parent="AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]

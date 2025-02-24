@@ -18,7 +18,7 @@ func _ready():
 func _on_game_over()->void:
 	%Label.text = GameEvents.game_over_reason
 	match GameEvents.game_over_reason:
-		"YOU CROSSED PATH WITH A BLACK CAT": 
+		"YOU CROSSED PATHS WITH A BLACK CAT": 
 			%DeathSplashCat.visible = true
 			#%DeathSplashCrack.texture = splash_cat
 		"YOU SPLIT THE POLE":
@@ -28,7 +28,7 @@ func _on_game_over()->void:
 		"YOU WENT UNDER A LADDER":
 			%DeathSplashLadder.visible = true
 		"YOU LOST YOUR SISTER":
-			%DeathSplashCat.visible = true
+			%DeathSplashSister.visible = true
 		
 
 func _on_button_pressed() -> void:
